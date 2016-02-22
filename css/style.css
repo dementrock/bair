@@ -1259,6 +1259,10 @@
       text-align: center;
     }
 
+    .banner .members.sponsor {
+        margin: 0 12em 1em;
+    }
+
       .banner .members li
       {
         display: inline-block;
@@ -1273,12 +1277,14 @@
 
       .banner .sponsor li
       {
+          margin-bottom: 20px;
       }
 
       .banner .members a
       {
         color: #fff;
         border: 0;
+        display: block;
       }
 
       .banner .members a:hover,

@@ -1,0 +1,10 @@
+#!/usr/bin/ruby
+
+require 'tenjin'
+
+engine = Tenjin::Engine.new(path: ['templates'], layout: '_layout.rbhtml')
+puts engine.render(ARGV[0])
+
+#'index.rbhtml')
+# Erubis::Eruby.new(File.open('templates/index.html.erb').read).result
+
