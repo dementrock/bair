@@ -1,4 +1,4 @@
-all: index students alumni publications courses getting_involved
+all: index students alumni publications courses getting_involved sponsor faculty
 
 index: templates/index.rbhtml templates/_layout.rbhtml
 	./render_template index.rbhtml > index.html
@@ -17,3 +17,9 @@ courses: templates/courses.rbhtml templates/_layout.rbhtml
 
 getting_involved: templates/getting_involved.rbhtml templates/_layout.rbhtml
 	./render_template getting_involved.rbhtml > getting_involved.html
+
+sponsor: templates/sponsor.rbhtml templates/_layout.rbhtml
+	./render_template sponsor.rbhtml > sponsor.html
+
+faculty: templates/faculty.rbhtml templates/_layout.rbhtml
+	./render_template faculty.rbhtml > faculty.html

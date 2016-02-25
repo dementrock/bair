@@ -1,0 +1,40 @@
+<div class="banner-wrapper">
+    <div class="inner">
+        <!-- Banner -->
+        <section class="banner container">
+            <h2 id="sponsor">Industrial Affiliates</h2>
+            <ul class="members sponsor">
+                <li>
+                    <a href="https://www.facebook.com/"><img src="images/sponsor/facebook.png" alt="Facebook"></a>
+                </li>
+                <li>
+                    <a href="http://www.microsoft.com/"><img src="images/sponsor/microsoft.png" alt="Microsoft"></a>
+                </li>
+                <li>
+                    <a href="http://www.samsung.com/"><img src="images/sponsor/samsung.png" alt="Samsung"></a>
+                </li>
+                <li>
+                    <a href="http://www.sony.com/"><img src="images/sponsor/sony.png" alt="Sony"></a>
+                </li>
+                <li>
+                    <a href="http://www.adobe.com/"><img src="images/sponsor/adobe.png" alt="Adobe"></a>
+                </li>
+                <li>
+                    <a href="http://a9.com/"><img src="images/sponsor/a9.png" alt="A9"></a>
+                </li>
+                <li>
+                    <a href="http://www.yahoo.co.jp/"><img src="images/sponsor/yahoo-japan.png" alt="Yahoo! Japan"></a>
+                </li>
+                <li>
+                    <a href="http://www.nvidia.com/page/home.html"><img src="images/sponsor/nvidia.png" alt="NVIDIA"></a>
+                </li>
+                <li>
+                    <a href="http://www.intel.com/"><img src="images/sponsor/intel.png" alt="Intel"></a>
+                </li>
+                <li>
+                    <a href="http://www.siemens.com/"><img src="images/sponsor/siemens.png" alt="Siemens"></a>
+                </li>
+            </ul>
+        </section>
+    </div>
+</div>
