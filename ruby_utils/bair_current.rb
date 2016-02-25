@@ -6,7 +6,7 @@ require "active_support/all"
 def get_sorted_rows
   session = GoogleDrive.saved_session(nil, nil, ENV["BAIR_GOOGLE_DRIVE_CLIENT_ID"], ENV["BAIR_GOOGLE_DRIVE_CLIENT_SECRET"])
 
-  bair_current_file = session.file_by_title("BAIR current")
+  bair_current_file = session.file_by_title("BAIR current students/post-docs")
 
   advisor_name_dict = {
     "Abbeel" => "Pieter Abbeel",
