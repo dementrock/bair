@@ -28,8 +28,11 @@
                 <?rb end ?>
               </div>
             </div>
-            <p>Position: ${row[:position]} </p>
-            <p>Research Interests: ${row[:research_interests]} </p>
+            <p>
+            Position: ${row[:position]} <br>
+            Research Interests: ${row[:research_interests]} <br>
+            Advisor: ${row[:advisor]}
+            </p>
           </div>
         <?rb end ?>
       </div>

@@ -43,6 +43,8 @@ def get_sorted_rows
   end
 
   all_rows
+    .group_by{|x| [x[:first_name], x[:last_name]]}
+    .to_a.map{|x| x[1][0].merge(advisor: x[1].map{|y| y[:advisor]}.join(", "))} # join advisors
     .reject{|x| x[:image_url].blank?} # only show the ones with profile image filled in
     .sort_by{|x| x[:last_name]}
 
