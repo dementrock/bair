@@ -1,9 +1,40 @@
-<div class="features-wrapper">
-    <!-- Features -->
-    <section class="features container">
-        <header>
-            <h2 id="research">Alumni</strong></h2>
-        </header>
-        <iframe style="width: 1000px; height: 800px" src="https://docs.google.com/spreadsheets/d/1H6FCToM9NM8_fXJJ-8-jVZL6br1dvjQ5YDeg10PXpgs/pubhtml?widget=true&amp;headers=false"></iframe>
-    </section>
+<?rb
+  require './ruby_utils/bair_alumni.rb'
+  sorted_rows = get_sorted_rows
+  years = sorted_rows.keys.sort_by{|x| -x.to_i}
+?>
+<div id="main-wrapper" style="margin-top: 0; padding-top: 0">
+  <!-- Features -->
+
+  <div id="main" class="container">
+    <div class="row">
+      <h2 id="research" style="text-align: center">Alumni</strong></h2>
+      <!-- Content -->
+      <div id="content" class="12u">
+        <?rb years.each do |year| ?>
+          <article class="is-post">
+            <header>
+              <h2>${year}</h2>
+              <ul>
+                <?rb sorted_rows[year].sort_by{|x| x[:last_name]}.each do |row| ?>
+                <li>
+                <?rb if not row[:webpage].blank? ?> 
+                <a href="${row[:webpage]}">${row[:first_name].strip}
+                  ${row[:last_name].strip}.</a>
+                <?rb else ?>
+                  ${row[:first_name].strip} ${row[:last_name].strip}.
+                <?rb end ?>
+                ${row[:current_position].blank? ? "" : "Current Affiliation: " +
+                row[:current_position] + "."}
+                ${row[:bair_position].blank? ? "" : "Position at BAIR: " +
+                row[:bair_position] + "."}
+                Advisor: ${row[:advisor]}</li>
+                <?rb end ?>
+              </ul>
+            </header>
+          </article>
+        <?rb end ?>
+      </div>
+    </div>
+  </div>
 </div>
