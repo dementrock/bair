@@ -74,12 +74,12 @@
   {
     color: #004c7d;
     text-decoration: none;
-    border-bottom: solid 1px #ddd;
-    -moz-transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
-    -webkit-transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
-    -o-transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
-    -ms-transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
-    transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
+    //border-bottom: solid 1px #ddd;
+    //-moz-transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
+    //-webkit-transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
+    //-o-transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
+    //-ms-transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
+    //transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
     outline: 0;
   }
 
@@ -95,14 +95,14 @@
     a:hover,
     a:focus
     {
-      color: #c78812;
-      border-bottom-color: rgba(255,255,255,0);
+      //color: #c78812;
+      //border-bottom-color: rgba(255,255,255,0);
     }
 
     a:hover strong,
     a:focus strong
     {
-      color: #004c7d;
+      //color: #004c7d;
     }
 
   strong, b
@@ -183,12 +183,12 @@
     .image
     {
       display: inline-block;
-      border: solid 6px #ebebeb !important;
-      -moz-transition: border 0.25s ease-in-out;
-      -webkit-transition: border 0.25s ease-in-out;
-      -o-transition: border 0.25s ease-in-out;
-      -ms-transition: border 0.25s ease-in-out;
-      transition: border 0.25s ease-in-out;
+      //border: solid 6px #ebebeb !important;
+      //-moz-transition: border 0.25s ease-in-out;
+      //-webkit-transition: border 0.25s ease-in-out;
+      //-o-transition: border 0.25s ease-in-out;
+      //-ms-transition: border 0.25s ease-in-out;
+      //transition: border 0.25s ease-in-out;
     }
 
       a.image:hover img,
@@ -201,12 +201,12 @@
       {
         display: block;
         width: 100%;
-        opacity: 0.9;
-        -moz-transition: opacity 0.25s ease-in-out;
-        -webkit-transition: opacity 0.25s ease-in-out;
-        -o-transition: opacity 0.25s ease-in-out;
-        -ms-transition: opacity 0.25s ease-in-out;
-        transition: opacity 0.25s ease-in-out;
+        //opacity: 0.9;
+        //-moz-transition: opacity 0.25s ease-in-out;
+        //-webkit-transition: opacity 0.25s ease-in-out;
+        //-o-transition: opacity 0.25s ease-in-out;
+        //-ms-transition: opacity 0.25s ease-in-out;
+        //transition: opacity 0.25s ease-in-out;
       }
 
       .image-full
@@ -1214,7 +1214,7 @@
     .gallery a:hover,
     .gallery a:focus
     {
-      border: solid 6px #f5a716 !important;
+      //border: solid 6px #f5a716 !important;
     }
 
       .gallery img
@@ -1224,8 +1224,11 @@
       .gallery span
       {
         display: inline-block;
-        width: 100%;
-        background: #ebebeb;
+        //width: 100%;
+        //background: #ebebeb;
+        font-size: 1.2em;
+        font-weight: normal;
+        line-height: 2.5em;
       }
 
 /*********************************************************************************/

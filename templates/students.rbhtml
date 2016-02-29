@@ -1,6 +1,7 @@
 <?rb
   require './ruby_utils/bair_current.rb'
   sorted_rows = get_sorted_rows
+  sorted_rows = ensure_face_images!(sorted_rows)
 ?>
 
 <div class="features-wrapper">
@@ -19,7 +20,7 @@
                 <?rb else ?>
                   <span class="image">
                 <?rb end ?>
-                    <img src="${row[:image_url]}" alt="${row[:first_name]} ${row[:last_name]}" />
+                    <img src="${row[:cropped_image_url]}" alt="${row[:first_name]} ${row[:last_name]}" />
                     <span>${row[:first_name]} ${row[:last_name]}</span>
                 <?rb if not row[:webpage].blank? ?>
                   </a>
