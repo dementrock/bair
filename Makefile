@@ -1,4 +1,4 @@
-all: index students alumni publications courses getting_involved sponsor faculty
+all: index students alumni publications courses getting_involved sponsor faculty software seminar
 
 index: templates/index.rbhtml templates/_layout.rbhtml
 	./render_template index.rbhtml > index.html
@@ -23,3 +23,13 @@ sponsor: templates/sponsor.rbhtml templates/_layout.rbhtml
 
 faculty: templates/faculty.rbhtml templates/_layout.rbhtml
 	./render_template faculty.rbhtml > faculty.html
+
+software: templates/software.rbhtml templates/_layout.rbhtml
+	./render_template software.rbhtml > software.html
+
+seminar: templates/seminar.rbhtml templates/_layout.rbhtml
+	./render_template seminar.rbhtml > seminar.html
+
+
+fonts:
+

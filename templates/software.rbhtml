@@ -1,0 +1,20 @@
+<?rb
+  require './ruby_utils/bair_software.rb'
+  sorted_rows = get_sorted_rows
+?>
+
+<div class="features-wrapper">
+    <!-- Features -->
+    <section class="features container">
+        <header>
+            <h2 id="research">Software</strong></h2>
+        </header>
+        <div class="markdown-container">
+          <?rb sorted_rows.each do |row| ?>
+          <p>
+          <strong><a href="${row[:url]}">${row[:name]}</a></strong>: ${row[:description]}
+          </p>
+          <?rb end ?>
+        </div>
+    </section>
+</div>

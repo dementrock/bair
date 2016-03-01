@@ -1,12 +1,49 @@
+<?rb
+  require './ruby_utils/bair_layout.rb'
+  nav_items = get_nav_items
+?>
+
+
 <!-- Features Wrapper -->
 <div class="features-wrapper">
     <!-- Features -->
+
+
     <section class="features container">
         <header>
             <h2 id="research">Welcome to the Berkeley Artificial Intelligence Research Lab</strong>.</h2>
         </header>
+
+        <div id="slides">
+            <img src="http://www.slidesjs.com/img/example-slide-350-1.jpg" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/" />
+            <img src="http://www.slidesjs.com/img/example-slide-350-2.jpg" alt="Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/" />
+            <img src="http://www.slidesjs.com/img/example-slide-350-3.jpg" alt="Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/" />
+            <img src="http://www.slidesjs.com/img/example-slide-350-4.jpg" alt="Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/" />
+            <a href="#" class="slidesjs-previous slidesjs-navigation">
+              <i class="icon icon-chevron-left icon-large"></i>
+            </a>
+            <a href="#" class="slidesjs-next slidesjs-navigation">
+              <i class="icon icon-chevron-right icon-large"></i>
+            </a>
+        </div>
+        <script>
+            $('#slides').slidesjs({
+              width: 940,
+              height: 350,
+              navigation: false
+            });
+        </script>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus velit non arcu accumsan, nec gravida est fringilla. Ut id sagittis ante. Pellentesque consectetur at est sit amet ornare. Mauris ultrices ligula a magna pulvinar convallis. Cras ac metus est. Nam felis nulla, venenatis ac condimentum quis, suscipit non ex. Duis in felis aliquam, placerat lorem ut, eleifend arcu. In at venenatis nisi, ac dapibus eros. Morbi lorem metus, varius non auctor id, efficitur a tortor. Suspendisse potenti. Nulla lobortis libero nisi, eu imperdiet orci cursus ac. Etiam malesuada ornare est, volutpat imperdiet sapien venenatis nec.
+        The Berkeley Artificial Intelligence Research lab (BAIR) has a long history of innovation in all areas of AI, including computer vision, machine learning, natural language processing and robotics.  Some of its current main thrusts include deep learning, human-compatible AI / AI for good, and connecting AI with other disciplines, including science and humanities.
         </p>
+        <div id="index_navs">
+          |<?rb nav_items[2..-1].each_with_index do |item, idx| ?>
+          <a href="${item[:url]}">${item[:name]}</a>
+          <?rb if idx != nav_items.size - 3 ?>
+          |
+          <?rb end ?>
+          <?rb end ?>
+          |
+        </div>
     </section>
 </div>

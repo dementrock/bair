@@ -1,11 +1,17 @@
+<?rb
+  require './ruby_utils/bair_getting_involved.rb'
+  qna = get_qna
+?>
+
+
 <div class="features-wrapper">
     <!-- Features -->
     <section class="features container">
         <header>
             <h2 id="research">Getting Involved</strong></h2>
         </header>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus velit non arcu accumsan, nec gravida est fringilla. Ut id sagittis ante. Pellentesque consectetur at est sit amet ornare. Mauris ultrices ligula a magna pulvinar convallis. Cras ac metus est. Nam felis nulla, venenatis ac condimentum quis, suscipit non ex. Duis in felis aliquam, placerat lorem ut, eleifend arcu. In at venenatis nisi, ac dapibus eros. Morbi lorem metus, varius non auctor id, efficitur a tortor. Suspendisse potenti. Nulla lobortis libero nisi, eu imperdiet orci cursus ac. Etiam malesuada ornare est, volutpat imperdiet sapien venenatis nec.
-        </p>
+        <div class="markdown-container">
+            #{qna}
+        </div>
     </section>
 </div>

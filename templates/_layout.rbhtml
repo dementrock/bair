@@ -1,4 +1,10 @@
 <!DOCTYPE HTML>
+<?rb
+  require './ruby_utils/bair_layout.rb'
+  nav_items = get_nav_items
+?>
+
+
 <!--
     Berkeley Vision and Learning Center (BVLC)
     
@@ -21,7 +27,8 @@
         <script src="js/config.js"></script>
         <script src="js/skel.min.js"></script>
         <script src="js/skel-panels.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <script src="js/jquery.slides.min.js"></script> <!-- but with the right path! -->
         <noscript>
             <link rel="stylesheet" href="css/skel-noscript.css" />
             <link rel="stylesheet" href="css/style.css" />
@@ -43,15 +50,9 @@
                 <!-- Nav -->
                 <nav id="nav">
                     <ul>
-                        <li><a href="index.html#header" class="icon icon-home"><span>BAIR</span></a></li>
-                        <li><a href="index.html#research" class="icon icon-bar-chart"><span>Research Vision</span></a></li>
-                        <li><a href="faculty.html" class="icon icon-bar-chart"><span>Faculty</span></a></li>
-                        <li><a href="students.html" class="icon icon-user"><span>Students</span></a></li>
-                        <li><a href="alumni.html" class="icon icon-user"><span>Alumni</span></a></li>
-                        <li><a href="publications.html" class="icon icon-book"><span>Publications</span></a></li>
-                        <li><a href="courses.html" class="icon icon-book"><span>Courses</span></a></li>
-                        <li><a href="sponsor.html" class="icon icon-bar-chart"><span>Industrial Affiliates</span></a></li>
-                        <li><a href="getting_involved.html" class="icon icon-book"><span>Getting Involved</span></a></li>
+                      <?rb nav_items.each do |item| ?>
+                        <li><a href="${item[:url]}" class="icon icon-${item[:icon]}"><span>${item[:name]}</span></a></li>
+                      <?rb end ?>
                     </ul>
                 </nav>
             </div>
@@ -76,6 +77,12 @@
                                 <li><a class="button button-icon icon icon-envelope"
                                     href="mailto:PLACEHOLDER">Contact BAIR</a></li>
                             </ul>
+                            <p>
+                              <img src="images/cpar.png" style="height: 43px;" />
+                            <span style="display: block;">BAIR is affiliated with the <a
+                              href="http://robotics.citris-uc.org">CITRIS People
+                              and Robots (CPAR) Initiative</a>.</span>
+                            </p>
                         </section>
                     </div>
                 </div>

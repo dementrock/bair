@@ -1375,3 +1375,64 @@
   font-family: helvetica;
   font-size: 0.8em;
 }
+
+.markdown-container h1 {
+  text-align: left;
+}
+
+.markdown-container p {
+  margin-bottom: 1em;
+}
+
+#slides {
+  display:none;
+}
+
+#slides .slidesjs-container {
+  margin-bottom:10px;
+}
+
+#slides .slidesjs-previous {
+  margin-right: 5px;
+  float:left;
+}
+#slides .slidesjs-next {
+  margin-right: 5px;
+  float:left;
+}
+
+.slidesjs-pagination {
+    margin:6px 0 0;
+    float: right;
+    list-style: none;
+}
+
+.slidesjs-pagination li {
+    float: left;
+    margin: 0 1px;
+}
+
+.slidesjs-pagination li a {
+    display: block;
+    width: 13px;
+    height: 0;
+    padding-top: 13px;
+    background-image: url(http://www.slidesjs.com/img/pagination.png);
+    background-position: 0 0;
+    float: left;
+    overflow: hidden;
+}
+
+.slidesjs-pagination li a.active, .slidesjs-pagination li a:hover.active { background-position: 0 -13px }
+
+.slidesjs-pagination li a:hover { background-position: 0 -26px }
+
+#slides a:link, #slides a:visited { color: #333 }
+
+#slides a:hover, #slides a:active { color: #9e2020 }
+
+#index_navs a {
+  color: rgb(85, 85, 85);
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}

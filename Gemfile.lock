@@ -79,6 +79,7 @@ GEM
       rack (~> 1.2)
     os (0.9.6)
     rack (1.6.4)
+    redcarpet (3.3.2)
     rest-client (1.8.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
@@ -103,3 +104,4 @@ DEPENDENCIES
   cloudinary
   firebase
   google_drive (= 1.0.5)
+  redcarpet

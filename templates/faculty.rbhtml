@@ -1,3 +1,9 @@
+<?rb
+  require './ruby_utils/bair_faculty.rb'
+  faculty_list = get_faculty_list
+  faculty_list = ensure_face_images!(faculty_list)
+?>
+
 <div class="banner-wrapper">
     <div class="inner">
         <!-- Banner -->
@@ -13,7 +19,14 @@
                 ">*: Member of Steering Committee</h6>
             <br>
             <ul class="members pi">
-                <li>
+              <?rb faculty_list.each do |faculty| ?>
+                 <li>
+                 <a href="${faculty[:url]}"><img src="${faculty[:cropped_image_url]}" alt="${faculty[:first_name]} ${faculty[:last_name]}"></a>
+                    <p><a
+                      href="${faculty[:url]}">${faculty[:first_name]}<br>${faculty[:last_name]}${faculty[:steering] == "TRUE" ? " *" : ""}</a></p>
+                </li>
+              <?rb end ?>
+                <!--<li>
                     <a href="http://www.cs.berkeley.edu/~pabbeel/"><img src="images/pi/abbeel.png" alt="Pieter Abbeel"></a>
                     <p><a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter<br>Abbeel *</a></p>
                 </li>
@@ -49,9 +62,6 @@
                     <a href="https://www.cs.berkeley.edu/~russell/"><img src="images/pi/russell.png" alt="Stuart Russell"></a>
                     <p><a href="https://www.cs.berkeley.edu/~russell/">Stuart<br>Russell *</a></p>
                 </li>
-                <!--</ul>
-                    <h2 id="affiliates">Affiliates</h2>
-                    <ul class="members pi">-->
                 <li>
                     <a href="http://www.eecs.berkeley.edu/~bajcsy/"><img src="images/pi/bajcsy.png" alt="Ruzena Bajcsy"></a>
                     <p><a href="http://www.eecs.berkeley.edu/~bajcsy/">Ruzena<br>Bajcsy</a></p>
@@ -132,7 +142,7 @@
                 <li>
                 </li>
                 <li>
-                </li>
+                </li>-->
             </ul>
         </section>
     </div>
