@@ -1,6 +1,8 @@
 <?rb
   require './ruby_utils/bair_current.rb'
-  sorted_rows = get_sorted_rows
+  require './ruby_utils/bair_faculty.rb'
+  faculty_list = get_faculty_list
+  sorted_rows = get_sorted_rows(faculty_list)
   sorted_rows = ensure_face_images!(sorted_rows)
 ?>
 

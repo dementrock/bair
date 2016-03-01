@@ -5,22 +5,22 @@ require "active_support/all"
 require "firebase"
 require "cloudinary"
 
-def get_sorted_rows
+def get_sorted_rows(faculty_list)
   session = GoogleDrive.saved_session(nil, nil, ENV["BAIR_GOOGLE_DRIVE_CLIENT_ID"], ENV["BAIR_GOOGLE_DRIVE_CLIENT_SECRET"])
 
   bair_current_file = session.file_by_title("BAIR current students/post-docs")
 
-  advisor_name_dict = {
-    "Abbeel" => "Pieter Abbeel",
-    "Jordan" => "Michael I. Jordan",
-    "Russell" => "Stuart Russell",
-    "Goldberg" => "Ken Goldberg",
-    "Malik" => "Jitendra Malik",
-    "Darrell" => "Trevor Darrell",
-    "Dragan" => "Anca Dragan",
-    "Efros" => "Alyosha Efros",
-    "Klein" => "Dan Klein",
-  }
+  advisor_name_dict = Hash[faculty_list.map{|x| [x[:last_name], "#{x[:first_name]} #{x[:last_name]}"]}]
+  #   "Abbeel" => "Pieter Abbeel",
+  #   "Jordan" => "Michael I. Jordan",
+  #   "Russell" => "Stuart Russell",
+  #   "Goldberg" => "Ken Goldberg",
+  #   "Malik" => "Jitendra Malik",
+  #   "Darrell" => "Trevor Darrell",
+  #   "Dragan" => "Anca Dragan",
+  #   "Efros" => "Alyosha Efros",
+  #   "Klein" => "Dan Klein",
+  # }
 
   all_rows = []
 
@@ -58,7 +58,7 @@ def ensure_face_images!(sorted_rows)
   cli = Firebase::Client.new(base_uri)
   processed_images = cli.get("processed_images").body || {}
   processed_keys = processed_images.keys
-  todo_images = sorted_rows.map{|x| x[:image_url]}.reject{|x| processed_keys.include?(Digest::MD5.hexdigest(x))}
+  todo_images = sorted_rows.map{|x| [x[:image_url], x]}.reject{|x| processed_keys.include?(Digest::MD5.hexdigest(x[0]))}
 
   Cloudinary.config do |config|
     config.cloud_name = ENV["CLOUDINARY_CLOUD_NAME"]
@@ -66,7 +66,7 @@ def ensure_face_images!(sorted_rows)
     config.api_secret = ENV["CLOUDINARY_API_SECRET"]
   end
 
-  todo_images.each do |image_url|
+  todo_images.each do |image_url, content|
     STDERR.puts "Processing #{image_url}..."
     STDERR.puts "Uploading image..."
     begin
@@ -77,6 +77,7 @@ def ensure_face_images!(sorted_rows)
       cli.set("processed_images", processed_images)
     rescue Exception => e
       STDERR.puts e
+      STDERR.puts content
       STDERR.puts "Continuing"
     end
   end
