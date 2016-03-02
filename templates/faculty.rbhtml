@@ -2,6 +2,8 @@
   require './ruby_utils/bair_faculty.rb'
   faculty_list = get_faculty_list
   faculty_list = ensure_face_images!(faculty_list)
+  steering = faculty_list.select{|x| x[:steering] == "TRUE" }
+  rest = faculty_list.select{|x| x[:steering] != "TRUE" }
 ?>
 
 <div class="banner-wrapper">
@@ -19,13 +21,53 @@
                 ">*: Member of Steering Committee</h6>
             <br>
             <ul class="members pi">
-              <?rb faculty_list.each do |faculty| ?>
+                <?rb steering.each_slice(9) do |slice_list| ?>
+                    <div class="row">
+                        <?rb slice_list[0...5].each do |faculty| ?>
+                            <?rb @faculty = faculty ?>
+                            <?rb import('_faculty.rbhtml') ?>
+                        <?rb end ?>
+                    </div>
+                    <div class="row">
+                        <?rb slice_list[5..-1].each do |faculty| ?>
+                            <?rb @faculty = faculty ?>
+                            <?rb import('_faculty.rbhtml') ?>
+                        <?rb end ?>
+                    </div>
+                <?rb end ?>
+                <?rb rest.each_slice(9) do |slice_list| ?>
+                    <div class="row">
+                        <?rb slice_list[0...5].each do |faculty| ?>
+                            <?rb @faculty = faculty ?>
+                            <?rb import('_faculty.rbhtml') ?>
+                        <?rb end ?>
+                    </div>
+                    <div class="row">
+                        <?rb slice_list[5..-1].each do |faculty| ?>
+                            <?rb @faculty = faculty ?>
+                            <?rb import('_faculty.rbhtml') ?>
+                        <?rb end ?>
+                    </div>
+                <?rb end ?>
+
+                <!--<?rb steering.each_slice(9) do |slice_list| ?>
+                    <?rb slice_list[0...5].each do |faculty| ?>
+                        <?rb @faculty = faculty ?>
+                        <?rb import('_faculty.rbhtml') ?>
+                    <?rb end ?>
+                    <?rb slice_list[5..-1].each do |faculty| ?>
+                        <?rb @faculty = faculty ?>
+                        <?rb import('_faculty.rbhtml') ?>
+                    <?rb end ?>
+                <?rb end ?>-->
+
+              <!--<?rb faculty_list.each do |faculty| ?>
                  <li>
                  <a href="${faculty[:url]}"><img src="${faculty[:cropped_image_url]}" alt="${faculty[:first_name]} ${faculty[:last_name]}"></a>
                     <p><a
                       href="${faculty[:url]}">${faculty[:first_name]}<br>${faculty[:last_name]}${faculty[:steering] == "TRUE" ? " *" : ""}</a></p>
                 </li>
-              <?rb end ?>
+              <?rb end ?>-->
                 <li>
                 </li>
                 <li>

@@ -1,0 +1,5 @@
+<li>
+    <a href="${@faculty[:url]}"><img src="${@faculty[:cropped_image_url]}" alt="${@faculty[:first_name]} ${@faculty[:last_name]}"></a>
+    <p><a
+href="${@faculty[:url]}">${@faculty[:first_name]}<br>${@faculty[:last_name]}${@faculty[:steering] == "TRUE" ? " *" : ""}</a></p>
+</li>
