@@ -1,77 +1,42 @@
+<?rb
+  require './ruby_utils/bair_courses.rb'
+  course_list = get_course_list
+  ug_list = course_list.select{|x| x[:type] == "undergrad"}
+  grad_list = course_list.select{|x| x[:type] == "grad"}
+?>
+
 <!-- Features Wrapper -->
 <div class="features-wrapper">
     <!-- Features -->
     <section class="features container">
     </section>
 </div>
-<?rb
-courses = [
-  {
-    number: "CS 188",
-    url: "http://www.eecs.berkeley.edu/Courses/Data/215.html",
-    name: "Artificial Intelligence",
-  },
-  {
-    number: "CS 189",
-    url: "http://www.cs.berkeley.edu/~jrs/189/",
-    name: "Machine Learning",
-  },
-  {
-    number: "EE 227B",
-    url: "http://www.eecs.berkeley.edu/~elghaoui/Teaching/EE227BT/",
-    name: "Convex Optimization",
-  },
-  {
-    number: "EE 227C",
-    url: "http://www.eecs.berkeley.edu/~brecht/eecs227c.html",
-    name: "Convex Optimization and Approximation: Optimization for Modern Data Analysis",
-  },
-  {
-    number: "CS 280",
-    url: "https://inst.eecs.berkeley.edu/~cs280/sp16/",
-    name: "Computer Vision",
-  },
-  {
-    number: "CS 281A",
-    url: "javascript:void(0)",
-    name: "Statistical Learning Theory",
-  },
-  {
-    number: "CS 281B",
-    url: "https://bcourses.berkeley.edu/courses/1409209",
-    name: "Statistical Learning Theory",
-  },
-  {
-    number: "CS 287",
-    url: "http://www.cs.berkeley.edu/~pabbeel/cs287-fa15/",
-    name: "Advanced Robotics",
-  },
-  {
-    number: "CS 288",
-    url: "http://www.cs.berkeley.edu/~klein/cs288/fa14/",
-    name: "Statistical Natural Language Processing",
-  },
-]
-?>
 <div id="main-wrapper" style="margin-top: 0; padding-top: 0">
 
     <!-- Main -->
     <div id="main" class="container">
         <div class="row">
-            <h2 id="research" style="text-align: center">Courses</strong></h2>
+            <h2 id="research" style="text-align: center">Undergraduate Courses</strong></h2>
             <!-- Content -->
             <div id="content" class="12u">
-                <?rb courses.each do |course| ?>
-                <article class="is-post">
-                    <header>
-                        <h2><a href="${course[:url]}">${course[:number]}: ${course[:name]}</a></h2>
-                    </header>
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus finibus velit non arcu accumsan, nec gravida est fringilla. Ut id sagittis ante. Pellentesque consectetur at est sit amet ornare. Mauris ultrices ligula a magna pulvinar convallis. Cras ac metus est. Nam felis nulla, venenatis ac condimentum quis, suscipit non ex. Duis in felis aliquam, placerat lorem ut, eleifend arcu. In at venenatis nisi, ac dapibus eros. Morbi lorem metus, varius non auctor id, efficitur a tortor. Suspendisse potenti. Nulla lobortis libero nisi, eu imperdiet orci cursus ac. Etiam malesuada ornare est, volutpat imperdiet sapien venenatis nec.
-                    </p>
-                </article>
+                <?rb ug_list.each do |course| ?>
+                  <header>
+                      <h2><a href="${course[:url] || "#"}">${course[:number]}: ${course[:name]}</a></h2>
+                  </header>
+                  <!--<p>${course[:description]}</p>-->
                 <?rb end ?>
             </div>
+            <h2 id="research" style="text-align: center">Graduate Courses</strong></h2>
+            <!-- Content -->
+            <div id="content" class="12u">
+                <?rb grad_list.each do |course| ?>
+                  <header>
+                      <h2><a href="${course[:url] || "#"}">${course[:number]}: ${course[:name]}</a></h2>
+                  </header>
+                  <!--<p>${course[:description]}</p>-->
+                <?rb end ?>
+            </div>
+
         </div>
     </div>
 </div>

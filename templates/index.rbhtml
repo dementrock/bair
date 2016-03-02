@@ -36,14 +36,5 @@
         <p>
         The Berkeley Artificial Intelligence Research lab (BAIR) has a long history of innovation in all areas of AI, including computer vision, machine learning, natural language processing and robotics.  Some of its current main thrusts include deep learning, human-compatible AI / AI for good, and connecting AI with other disciplines, including science and humanities.
         </p>
-        <div id="index_navs">
-          |<?rb nav_items[2..-1].each_with_index do |item, idx| ?>
-          <a href="${item[:url]}">${item[:name]}</a>
-          <?rb if idx != nav_items.size - 3 ?>
-          |
-          <?rb end ?>
-          <?rb end ?>
-          |
-        </div>
     </section>
 </div>

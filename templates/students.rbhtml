@@ -11,10 +11,10 @@
 
     <h2 id="fellowships">Students</h2>
 
-    <?rb sorted_rows.each_slice(3) do |slice_rows| ?>
+    <?rb sorted_rows.each_slice(4) do |slice_rows| ?>
       <div class="row">
         <?rb slice_rows.each do |row| ?>
-          <div class="4u">
+          <div class="3u">
             <div class="gallery">
               <div>
                 <?rb if not row[:webpage].blank? ?>
@@ -32,9 +32,9 @@
               </div>
             </div>
             <p>
-            Position: ${row[:position]} <br>
-            Research Interests: ${row[:research_interests]} <br>
-            Advisor: ${row[:advisor]}
+            ${row[:position]} <br>
+            Advisor: #{row[:advisor]} <br>
+            Research Interests: ${row[:research_interests]}
             </p>
           </div>
         <?rb end ?>

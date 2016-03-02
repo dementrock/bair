@@ -25,11 +25,11 @@ def get_nav_items
       icon: "user",
       name: "Alumni",
     },
-    {
-      url: "publications.html",
-      icon: "book",
-      name: "Publications",
-    },
+    #{
+    #  url: "publications.html",
+    #  icon: "book",
+    #  name: "Publications",
+    #},
     {
       url: "courses.html",
       icon: "book",

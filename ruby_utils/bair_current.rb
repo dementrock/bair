@@ -11,6 +11,7 @@ def get_sorted_rows(faculty_list)
   bair_current_file = session.file_by_title("BAIR current students/post-docs")
 
   advisor_name_dict = Hash[faculty_list.map{|x| [x[:last_name], "#{x[:first_name]} #{x[:last_name]}"]}]
+  advisor_url_dict = Hash[faculty_list.map{|x| ["#{x[:first_name]} #{x[:last_name]}", x[:url]]}]
   #   "Abbeel" => "Pieter Abbeel",
   #   "Jordan" => "Michael I. Jordan",
   #   "Russell" => "Stuart Russell",
@@ -46,7 +47,9 @@ def get_sorted_rows(faculty_list)
 
   all_rows
     .group_by{|x| [x[:first_name], x[:last_name]]}
-    .to_a.map{|x| x[1][0].merge(advisor: x[1].map{|y| y[:advisor]}.join(", "))} # join advisors
+    .to_a.map{|x| x[1][0].merge(advisor: x[1].map{|y|
+      %Q{<a href="#{advisor_url_dict[y[:advisor]]}">#{y[:advisor]}</a>}
+    }.join(", "))} # join advisors
     .reject{|x| x[:image_url].blank?} # only show the ones with profile image filled in
     .sort_by{|x| x[:last_name]}
     .reject{|x| x[:first_name] == "Dummy"}

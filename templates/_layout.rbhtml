@@ -58,25 +58,24 @@
             </div>
         </div>
         #{@_content}
+        <div class="features-wrapper">
+            <div id="index_navs">
+              |<?rb nav_items[2..-1].each_with_index do |item, idx| ?>
+              <a href="${item[:url]}">${item[:name]}</a>
+              <?rb if idx != nav_items.size - 3 ?>
+              |
+              <?rb end ?>
+              <?rb end ?>
+              |
+            </div>
+        </div>
         <!-- Footer Wrapper -->
         <div id="footer-wrapper">
             <!-- Footer -->
             <div id="footer" class="container">
-                <header>
-                    <h2>Questions or comments? <strong>Contact us:</strong></h2>
-                </header>
                 <div class="row">
                     <div class="-3u 6u">
                         <section>
-                            <p>
-                                For more information, contact the BAIR Director, TODO:
-                                <br>
-                                <a href="mailto:PLACEHOLDER">TODO</a>.
-                            </p>
-                            <ul class="actions">
-                                <li><a class="button button-icon icon icon-envelope"
-                                    href="mailto:PLACEHOLDER">Contact BAIR</a></li>
-                            </ul>
                             <p>
                               <img src="images/cpar.png" style="height: 43px;" />
                             <span style="display: block;">BAIR is affiliated with the <a

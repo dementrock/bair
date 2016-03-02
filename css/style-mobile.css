@@ -395,3 +395,11 @@
     margin-top: 2em;
     padding-top: 2em;
   }
+
+
+.gallery div
+{
+  position: static;
+}
+
+

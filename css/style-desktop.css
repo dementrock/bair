@@ -338,12 +338,12 @@
 
   .fellows .gallery
   {
-    height: 350px;
+    height: 200px;
   }
 
     .fellows .gallery img
     {
-      width: 200px !important;
+      width: 128px !important;
     }
 
 /*********************************************************************************/

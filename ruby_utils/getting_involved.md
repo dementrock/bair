@@ -1,7 +1,7 @@
 # How to engage as a donor?
 
 Please contact our donor coordinators, Professor [Michael
-Jordan](mailto:jorda AT cs.berkeley.edu), Professor [Stuart
+Jordan](mailto:jordan AT cs.berkeley.edu), Professor [Stuart
 Russell](mailto:russell AT cs.berkeley.edu),
 Professor [Jitendra Malik](mailto:malik AT cs.berkeley.edu), Professor [Ken
 Goldberg](mailto:goldberg AT cs.berkeley.edu).
@@ -24,8 +24,8 @@ If already a Berkeley PhD student, connect directly with individual BAIR faculty
 
 If not a Berkeley student (yet): To become a Ph.D. student in BAIR, you need to
 be admitted into one of the Berkeley PhD programs.   Most BAIR faculty are in
-EECS, for which the admissions process is explained here:  EECS graduate
-admissions.   Some BAIR faculty are in
+EECS, for which the admissions process is explained here: [EECS graduate
+admissions](https://www.eecs.berkeley.edu/Gradadm/msphdadm.htm).   Some BAIR faculty are in
 [Statistics](http://statistics.berkeley.edu/programs/graduate/admissions). We
 very much look forward to hearing from you __after__ you have been admitted.
 Best of luck with your applications!
