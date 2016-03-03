@@ -10,10 +10,6 @@
 
 
     <section class="features container">
-        <header>
-            <h2 id="research">Welcome to the Berkeley Artificial Intelligence Research Lab</strong>.</h2>
-        </header>
-
         <div id="slides">
             <img src="http://www.slidesjs.com/img/example-slide-350-1.jpg" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/" />
             <img src="http://www.slidesjs.com/img/example-slide-350-2.jpg" alt="Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/" />

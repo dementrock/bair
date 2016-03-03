@@ -3,7 +3,7 @@
   require './ruby_utils/bair_faculty.rb'
   faculty_list = get_faculty_list
   sorted_rows = get_sorted_rows(faculty_list)
-  sorted_rows = ensure_face_images!(sorted_rows)
+  sorted_rows = ensure_student_face_images!(sorted_rows)
 ?>
 
 <div class="features-wrapper">

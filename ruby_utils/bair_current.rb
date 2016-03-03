@@ -56,7 +56,7 @@ def get_sorted_rows(faculty_list)
 
 end
 
-def ensure_face_images!(sorted_rows)
+def ensure_student_face_images!(sorted_rows)
   base_uri = "https://bair-dev.firebaseio.com"
   cli = Firebase::Client.new(base_uri)
   processed_images = cli.get("processed_images").body || {}

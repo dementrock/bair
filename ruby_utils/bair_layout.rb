@@ -5,25 +5,31 @@ def get_nav_items
       icon: "home",
       name: "BAIR",
     },
+    #{
+    #  url: "index.html#research",
+    #  icon: "bar-chart",
+    #  name: "Research Vision",
+    #},
     {
-      url: "index.html#research",
-      icon: "bar-chart",
-      name: "Research Vision",
-    },
-    {
-      url: "faculty.html",
-      icon: "bar-chart",
-      name: "Faculty",
-    },
-    {
-      url: "students.html",
       icon: "user",
-      name: "Students",
-    },
-    {
-      url: "alumni.html",
-      icon: "user",
-      name: "Alumni",
+      name: "People",
+      nested: [
+        {
+          url: "faculty.html",
+          icon: "bar-chart",
+          name: "Faculty",
+        },
+        {
+          url: "students.html",
+          icon: "user",
+          name: "Students",
+        },
+        {
+          url: "alumni.html",
+          icon: "user",
+          name: "Alumni",
+        },
+      ]
     },
     #{
     #  url: "publications.html",

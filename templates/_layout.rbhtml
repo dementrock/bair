@@ -44,15 +44,23 @@
                 <h1 id="logo">
                     <a id="home" href="#">Berkeley Artificial Intelligence Research Lab</a>
                 </h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                </p>
                 <!-- Nav -->
                 <nav id="nav">
                     <ul>
-                      <?rb nav_items.each do |item| ?>
-                        <li><a href="${item[:url]}" class="icon icon-${item[:icon]}"><span>${item[:name]}</span></a></li>
-                      <?rb end ?>
+                        <?rb nav_items.each do |item| ?>
+                            <?rb if item[:nested] ?>
+                                <li>
+                                    <a href="#header" class="icon icon-${item[:icon]}"><span>${item[:name]}</span></a>
+                                    <ul>
+                                        <?rb item[:nested].each do |nested_item| ?>
+                                            <li><a href="${nested_item[:url]}">${nested_item[:name]}</a></li>
+                                        <?rb end ?>
+                                    </ul>
+                                </li>
+                            <?rb else ?>
+                                <li><a href="${item[:url]}" class="icon icon-${item[:icon]}"><span>${item[:name]}</span></a></li>
+                            <?rb end ?>
+                        <?rb end ?>
                     </ul>
                 </nav>
             </div>
@@ -60,9 +68,10 @@
         #{@_content}
         <div class="features-wrapper">
             <div id="index_navs">
-              |<?rb nav_items[2..-1].each_with_index do |item, idx| ?>
+              <?rb flat_items = nav_items.map{|x| x[:nested] ? x[:nested] : [x]}.flatten ?>
+              |<?rb flat_items[1..-1].each_with_index do |item, idx| ?>
               <a href="${item[:url]}">${item[:name]}</a>
-              <?rb if idx != nav_items.size - 3 ?>
+              <?rb if idx != nav_items.size - 2 ?>
               |
               <?rb end ?>
               <?rb end ?>
