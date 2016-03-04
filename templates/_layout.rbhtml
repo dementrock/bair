@@ -48,18 +48,16 @@
                 <nav id="nav">
                     <ul>
                         <?rb nav_items.each do |item| ?>
-                            <?rb if item[:nested] ?>
-                                <li>
-                                    <a href="#header" class="icon icon-${item[:icon]}"><span>${item[:name]}</span></a>
+                            <li>
+                                <a href="${item[:url]}" class="icon icon-${item[:icon]}"><span>${item[:name]}</span></a>
+                                <?rb if item[:nested] ?>
                                     <ul>
                                         <?rb item[:nested].each do |nested_item| ?>
                                             <li><a href="${nested_item[:url]}">${nested_item[:name]}</a></li>
                                         <?rb end ?>
                                     </ul>
-                                </li>
-                            <?rb else ?>
-                                <li><a href="${item[:url]}" class="icon icon-${item[:icon]}"><span>${item[:name]}</span></a></li>
-                            <?rb end ?>
+                                <?rb end ?>
+                            </li>
                         <?rb end ?>
                     </ul>
                 </nav>
@@ -71,7 +69,7 @@
               <?rb flat_items = nav_items.map{|x| x[:nested] ? x[:nested] : [x]}.flatten ?>
               |<?rb flat_items[1..-1].each_with_index do |item, idx| ?>
               <a href="${item[:url]}">${item[:name]}</a>
-              <?rb if idx != nav_items.size - 2 ?>
+              <?rb if idx != flat_items.size - 2 ?>
               |
               <?rb end ?>
               <?rb end ?>

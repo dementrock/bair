@@ -4,12 +4,31 @@
   faculty_list = get_faculty_list
   sorted_rows = get_sorted_rows(faculty_list)
   sorted_rows = ensure_student_face_images!(sorted_rows)
+  if ARGV[1]
+    sorted_rows = sorted_rows.select{|x| x[:raw_position].to_s == ARGV[1].to_s}
+  end
 ?>
 
 <div class="features-wrapper">
   <section class="features fellows container">
 
     <h2 id="fellowships">Students</h2>
+
+    <div class="features-wrapper">
+        <div id="index_navs">
+            |
+            <a href="students.html">All</a>
+            |
+            <a href="students_postdoc.html">Post-docs</a>
+            |
+            <a href="students_phd.html">PhD Students</a>
+            |
+            <a href="students_master.html">Master's Students</a>
+            |
+            <a href="students_undergraduate.html">Undergraduates</a>
+            |
+        </div>
+    </div>
 
     <?rb sorted_rows.each_slice(4) do |slice_rows| ?>
       <div class="row">

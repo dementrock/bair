@@ -1,40 +1,61 @@
 <?rb
   require './ruby_utils/bair_alumni.rb'
-  sorted_rows = get_sorted_rows
+  require './ruby_utils/bair_faculty.rb'
+  faculty_list = get_faculty_list
+  sorted_rows = get_sorted_rows(faculty_list)
+  if ARGV[1]
+    sorted_rows = sorted_rows.select{|x| x[:raw_bair_position].to_s == ARGV[1].to_s}
+  end
+  sorted_rows = sorted_rows.group_by{|x| x[:year]}
   years = sorted_rows.keys.sort_by{|x| -x.to_i}
 ?>
-<div id="main-wrapper" style="margin-top: 0; padding-top: 0">
+<div class="features-wrapper">
   <!-- Features -->
+  <section class="features fellows container">
+    <h2 id="fellowships">Alumni</h2>
+    <div class="features-wrapper">
+        <div id="index_navs">
+            |
+            <a href="alumni.html">All</a>
+            |
+            <a href="alumni_research_scientist.html">Research Scientists</a>
+            |
+            <a href="alumni_postdoc.html">Post-docs</a>
+            |
+            <a href="alumni_phd.html">PhD Students</a>
+            |
+            <a href="alumni_master.html">Master's Students</a>
+            |
+            <a href="alumni_undergraduate.html">Undergraduates</a>
+            |
+        </div>
+    </div>
 
-  <div id="main" class="container">
-    <div class="row">
-      <h2 id="research" style="text-align: center">Alumni</strong></h2>
-      <!-- Content -->
-      <div id="content" class="12u">
-        <?rb years.each do |year| ?>
-          <article class="is-post">
-            <header>
-              <h2>${year}</h2>
-              <ul>
-                <?rb sorted_rows[year].sort_by{|x| x[:last_name]}.each do |row| ?>
-                <li>
-                <?rb if not row[:webpage].blank? ?> 
-                <a href="${row[:webpage]}">${row[:first_name].strip}
-                  ${row[:last_name].strip}.</a>
-                <?rb else ?>
-                  ${row[:first_name].strip} ${row[:last_name].strip}.
-                <?rb end ?>
-                ${row[:current_position].blank? ? "" : "Current Affiliation: " +
-                row[:current_position] + "."}
-                ${row[:bair_position].blank? ? "" : "Position at BAIR: " +
-                row[:bair_position] + "."}
-                Advisor: ${row[:advisor]}</li>
-                <?rb end ?>
-              </ul>
-            </header>
-          </article>
-        <?rb end ?>
-      </div>
+    <!-- Content -->
+    <div id="content" class="12u" style="text-align: left;">
+      <?rb years.each do |year| ?>
+        <article class="is-post">
+          <header>
+            <h2>${year}</h2>
+            <ul>
+              <?rb sorted_rows[year].sort_by{|x| x[:last_name]}.each do |row| ?>
+              <li>
+              <?rb if not row[:webpage].blank? ?> 
+              <a href="${row[:webpage]}">${row[:first_name].strip}
+                ${row[:last_name].strip}.</a>
+              <?rb else ?>
+                ${row[:first_name].strip} ${row[:last_name].strip}.
+              <?rb end ?>
+              ${row[:current_position].blank? ? "" : "Current Affiliation: " +
+              row[:current_position] + "."}
+              ${row[:bair_position].blank? ? "" : "Position at BAIR: " +
+              row[:bair_position] + "."}
+              Advisor: #{row[:advisor]}</li>
+              <?rb end ?>
+            </ul>
+          </header>
+        </article>
+      <?rb end ?>
     </div>
   </div>
 </div>

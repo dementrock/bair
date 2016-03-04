@@ -11,10 +11,12 @@
 
     <section class="features container">
         <div id="slides">
-            <img src="http://www.slidesjs.com/img/example-slide-350-1.jpg" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/" />
-            <img src="http://www.slidesjs.com/img/example-slide-350-2.jpg" alt="Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/" />
-            <img src="http://www.slidesjs.com/img/example-slide-350-3.jpg" alt="Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/" />
-            <img src="http://www.slidesjs.com/img/example-slide-350-4.jpg" alt="Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/" />
+            <img
+            src="images/berkeley_1.jpg" alt="Berkeley" />
+            <img
+            src="images/berkeley_2.jpg" alt="Berkeley" />
+            <img
+            src="images/berkeley_3.jpg" alt="Berkeley" />
             <a href="#" class="slidesjs-previous slidesjs-navigation">
               <i class="icon icon-chevron-left icon-large"></i>
             </a>
@@ -30,7 +32,7 @@
             });
         </script>
         <p>
-        The Berkeley Artificial Intelligence Research lab (BAIR) has a long history of innovation in all areas of AI, including computer vision, machine learning, natural language processing and robotics.  Some of its current main thrusts include deep learning, human-compatible AI / AI for good, and connecting AI with other disciplines, including science and humanities.
+        The Berkeley Artificial Intelligence Research (BAIR) Lab is being established in Spring 2016 to expand the extensive history of UC Berkeley AI research on the foundations of computer vision, machine learning, natural language processing, and robotics.  Twenty-seven Berkeley faculty and over 100 graduate students affiliated with BAIR will pursue research in deep learning, human-compatible AI / AI for good, and connecting AI with other scientific disciplines and the humanities.
         </p>
     </section>
 </div>

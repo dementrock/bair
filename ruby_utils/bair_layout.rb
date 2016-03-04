@@ -13,6 +13,7 @@ def get_nav_items
     {
       icon: "user",
       name: "People",
+      url: "#header",
       nested: [
         {
           url: "faculty.html",

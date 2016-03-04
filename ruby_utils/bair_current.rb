@@ -45,13 +45,59 @@ def get_sorted_rows(faculty_list)
     all_rows += dict_rows  
   end
 
+  all_rows = all_rows.reject{|x| x[:first_name].blank?}
+
+  def normalize_position(s)
+    s.downcase.gsub(/[^\w]/,"")
+  end
+
+  all_rows = all_rows.reject do |x|
+    if x[:position].blank?
+      STDERR.puts "Position blank!"
+      STDERR.puts x
+    end
+    x[:position].blank?
+  end
+
+  cleanup_position = {
+    "phdstudent" => :phd,
+    "postdoc" => :postdoc,
+    "undergraduate" => :undergraduate,
+    "masterstudent" => :master,
+    "mastersstudent" => :master,
+    "master" => :master
+  }
+
+  position_text = {
+    phd: "PhD Student",
+    postdoc: "Post-doc",
+    undergrad: "Undergraduate",
+    master: "Master",
+  }
+
+
+  all_rows = all_rows.map do |x|
+    normalized = normalize_position(x[:position])
+    if not cleanup_position.include?(normalized)
+      STDERR.puts "Invalid position!"
+      STDERR.puts x
+    end
+    cleanup = cleanup_position[normalized]
+    x.merge(raw_position: cleanup, position: position_text[cleanup])
+  end
+
   all_rows
     .group_by{|x| [x[:first_name], x[:last_name]]}
     .to_a.map{|x| x[1][0].merge(advisor: x[1].map{|y|
       %Q{<a href="#{advisor_url_dict[y[:advisor]]}">#{y[:advisor]}</a>}
     }.join(", "))} # join advisors
-    .reject{|x| x[:image_url].blank?} # only show the ones with profile image filled in
-    .sort_by{|x| x[:last_name]}
+    .reject{|x| # only show the ones with profile image filled in
+      #if x[:image_url].blank?
+      #  STDERR.puts "Image blank!"
+      #  STDERR.puts x
+      #end
+      x[:image_url].blank?
+    }.sort_by{|x| x[:last_name]}
     .reject{|x| x[:first_name] == "Dummy"}
 
 end
@@ -98,6 +144,9 @@ def ensure_student_face_images!(sorted_rows)
 end
 
 if __FILE__ == $0
-  sorted_rows = get_sorted_rows
-  sorted_rows = ensure_face_images!(sorted_rows)
+  require_relative './bair_faculty.rb'
+  faculty_list = get_faculty_list
+  sorted_rows = get_sorted_rows(faculty_list)
+  sorted_rows = ensure_student_face_images!(sorted_rows)
+
 end
