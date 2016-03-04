@@ -71,8 +71,8 @@ def get_sorted_rows(faculty_list)
   position_text = {
     phd: "PhD Student",
     postdoc: "Post-doc",
-    undergrad: "Undergraduate",
-    master: "Master",
+    undergraduate: "Undergraduate",
+    master: "Master's Student",
   }
 
 
