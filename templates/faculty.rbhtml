@@ -2,6 +2,7 @@
   require './ruby_utils/bair_faculty.rb'
   faculty_list = get_faculty_list
   faculty_list = ensure_faculty_face_images!(faculty_list)
+  faculty_list = ensure_local_faculty_face_images!(faculty_list)
   steering = faculty_list.select{|x| x[:steering] == "TRUE" }
   rest = faculty_list.select{|x| x[:steering] != "TRUE" }
 ?>

@@ -1,3 +1,4 @@
+require_relative "./settings"
 require "google/api_client"
 require "google_drive"
 require "pry"
@@ -28,7 +29,8 @@ end
 def ensure_faculty_face_images!(sorted_rows)
   base_uri = "https://bair-dev.firebaseio.com"
   cli = Firebase::Client.new(base_uri)
-  processed_images = cli.get("faculty_processed_images").body || {}
+  cli_key = "faculty_processed_images"
+  processed_images = cli.get(cli_key).body || {}
   processed_keys = processed_images.keys
   todo_images = sorted_rows.map{|x| [x[:image_url], x]}.reject{|x| processed_keys.include?(Digest::MD5.hexdigest(x[0]))}
 
@@ -43,10 +45,10 @@ def ensure_faculty_face_images!(sorted_rows)
     STDERR.puts "Uploading image..."
     begin
       ret = Cloudinary::Uploader.upload image_url
-      processed_images = cli.get("faculty_processed_images").body || {}
+      processed_images = cli.get(cli_key).body || {}
       processed_images[Digest::MD5.hexdigest(image_url)] = ret
       # save after every update
-      cli.set("faculty_processed_images", processed_images)
+      cli.set(cli_key, processed_images)
     rescue Exception => e
       STDERR.puts e
       STDERR.puts content
@@ -58,7 +60,52 @@ def ensure_faculty_face_images!(sorted_rows)
       key = Digest::MD5.hexdigest(row[:image_url])
       if processed_images.include?(key)
         id = processed_images[key]["public_id"]
-        row[:cropped_image_url] = Cloudinary::Utils.cloudinary_url(id, width: 200, height: 200, crop: :thumb, gravity: :face, radius: :max, format: "png")
+        row[:remote_cropped_image_url] = Cloudinary::Utils.cloudinary_url(id, width: 200, height: 200, crop: :thumb, gravity: :face, radius: :max, format: "png")
+      end
+    end
+  end
+  sorted_rows = sorted_rows.reject{|x| x[:remote_cropped_image_url].blank?}
+  sorted_rows
+end
+
+
+def ensure_local_faculty_face_images!(sorted_rows)
+  base_uri = "https://bair-dev.firebaseio.com"
+  cli = Firebase::Client.new(base_uri)
+  cli_key = "local_faculty_processed_images_v2"
+  processed_images = cli.get(cli_key).body || {}
+  processed_keys = processed_images.keys
+  todo_images = sorted_rows.map{|x| [x[:remote_cropped_image_url], x]}.reject{|x| processed_keys.include?(Digest::MD5.hexdigest(x[0]))}
+
+  Cloudinary.config do |config|
+    config.cloud_name = ENV["CLOUDINARY_CLOUD_NAME"]
+    config.api_key = ENV["CLOUDINARY_API_KEY"]
+    config.api_secret = ENV["CLOUDINARY_API_SECRET"]
+  end
+
+  todo_images.each do |image_url, content|
+    STDERR.puts "Processing #{image_url}..."
+    STDERR.puts "Downloading image..."
+    begin
+      file_name = Digest::MD5.hexdigest(image_url) + ".png"
+      open("#{FACULTY_CLOUDINARY_CACHE_PATH}/#{file_name}", 'wb') do |file|
+        file << open(image_url).read
+      end
+      processed_images = cli.get(cli_key).body || {}
+      processed_images[Digest::MD5.hexdigest(image_url)] = file_name
+      # save after every update
+      cli.set(cli_key, processed_images)
+    rescue Exception => e
+      STDERR.puts e
+      STDERR.puts content
+      STDERR.puts "Continuing"
+    end
+  end
+  sorted_rows.each do |row|
+    unless row[:remote_cropped_image_url].blank?
+      key = Digest::MD5.hexdigest(row[:remote_cropped_image_url])
+      if processed_images.include?(key)
+        row[:cropped_image_url] = "#{FACULTY_WEB_CLOUDINARY_CACHE_PATH}/#{key}.png"
       end
     end
   end

@@ -4,6 +4,7 @@
   faculty_list = get_faculty_list
   sorted_rows = get_sorted_rows(faculty_list)
   sorted_rows = ensure_student_face_images!(sorted_rows)
+  sorted_rows = ensure_local_student_face_images!(sorted_rows)
   if ARGV[1]
     sorted_rows = sorted_rows.select{|x| x[:raw_position].to_s == ARGV[1].to_s}
   end

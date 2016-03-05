@@ -12,19 +12,6 @@ def get_sorted_rows(faculty_list)
   advisor_name_dict = Hash[faculty_list.map{|x| [x[:last_name], "#{x[:first_name]} #{x[:last_name]}"]}]
   advisor_url_dict = Hash[faculty_list.map{|x| ["#{x[:first_name]} #{x[:last_name]}", x[:url]]}]
 
-
-  #advisor_name_dict = {
-  #  "Abbeel" => "Pieter Abbeel",
-  #  "Jordan" => "Michael I. Jordan",
-  #  "Russell" => "Stuart Russell",
-  #  "Goldberg" => "Ken Goldberg",
-  #  "Malik" => "Jitendra Malik",
-  #  "Darrell" => "Trevor Darrell",
-  #  "Dragan" => "Anca Dragan",
-  #  "Efros" => "Alyosha Efros",
-  #  "Klein" => "Dan Klein",
-  #}
-
   all_rows = []
 
   dict_keys_sub = {
@@ -53,14 +40,6 @@ def get_sorted_rows(faculty_list)
     s.downcase.gsub(/[^\w]/,"")
   end
 
-  # all_rows = all_rows.reject do |x|
-  #   if x[:bair_position].blank?
-  #     STDERR.puts "Position blank!"
-  #     STDERR.puts x
-  #   end
-  #   x[:bair_position].blank?
-  # end
-
   cleanup_position = {
     "phdstudent" => :phd,
     "phd" => :phd,
@@ -82,7 +61,7 @@ def get_sorted_rows(faculty_list)
       STDERR.puts x
     end
     cleanup = cleanup_position[normalized]
-    x.merge(raw_bair_position: cleanup)#, bairposition: position_text[cleanup])
+    x.merge(raw_bair_position: cleanup)
   end
 
 

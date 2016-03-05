@@ -1,45 +1,42 @@
-all: index students alumni publications courses getting_involved sponsor faculty software seminar
+all: index faculty students alumni publications courses getting_involved sponsor software seminar
+
+DEPLOY_FOLDER=deploy
 
 index: templates/index.rbhtml templates/_layout.rbhtml
-	./render_template index.rbhtml > index.html
+	./render_template index.rbhtml > $(DEPLOY_FOLDER)/index.html
 
 students: templates/students.rbhtml templates/_layout.rbhtml
-	./render_template students.rbhtml > students.html
-	./render_template students.rbhtml postdoc > students_postdoc.html
-	./render_template students.rbhtml phd > students_phd.html
-	./render_template students.rbhtml master > students_master.html
-	./render_template students.rbhtml undergraduate > students_undergraduate.html
+	./render_template students.rbhtml > $(DEPLOY_FOLDER)/students.html
+	./render_template students.rbhtml postdoc > $(DEPLOY_FOLDER)/students_postdoc.html
+	./render_template students.rbhtml phd > $(DEPLOY_FOLDER)/students_phd.html
+	./render_template students.rbhtml master > $(DEPLOY_FOLDER)/students_master.html
+	./render_template students.rbhtml undergraduate > $(DEPLOY_FOLDER)/students_undergraduate.html
 
 alumni: templates/alumni.rbhtml templates/_layout.rbhtml
-	./render_template alumni.rbhtml > alumni.html
-	./render_template alumni.rbhtml postdoc > alumni_postdoc.html
-	./render_template alumni.rbhtml phd > alumni_phd.html
-	./render_template alumni.rbhtml master > alumni_master.html
-	./render_template alumni.rbhtml undergraduate > alumni_undergraduate.html
-	./render_template alumni.rbhtml research_scientist > alumni_research_scientist.html
-
+	./render_template alumni.rbhtml > $(DEPLOY_FOLDER)/alumni.html
+	./render_template alumni.rbhtml postdoc > $(DEPLOY_FOLDER)/alumni_postdoc.html
+	./render_template alumni.rbhtml phd > $(DEPLOY_FOLDER)/alumni_phd.html
+	./render_template alumni.rbhtml master > $(DEPLOY_FOLDER)/alumni_master.html
+	./render_template alumni.rbhtml undergraduate > $(DEPLOY_FOLDER)/alumni_undergraduate.html
+	./render_template alumni.rbhtml research_scientist > $(DEPLOY_FOLDER)/alumni_research_scientist.html
 
 publications: templates/publications.rbhtml templates/_layout.rbhtml
-	./render_template publications.rbhtml > publications.html
+	./render_template publications.rbhtml > $(DEPLOY_FOLDER)/publications.html
 
 courses: templates/courses.rbhtml templates/_layout.rbhtml
-	./render_template courses.rbhtml > courses.html
+	./render_template courses.rbhtml > $(DEPLOY_FOLDER)/courses.html
 
 getting_involved: templates/getting_involved.rbhtml templates/_layout.rbhtml
-	./render_template getting_involved.rbhtml > getting_involved.html
+	./render_template getting_involved.rbhtml > $(DEPLOY_FOLDER)/getting_involved.html
 
 sponsor: templates/sponsor.rbhtml templates/_layout.rbhtml
-	./render_template sponsor.rbhtml > sponsor.html
+	./render_template sponsor.rbhtml > $(DEPLOY_FOLDER)/sponsor.html
 
 faculty: templates/faculty.rbhtml templates/_layout.rbhtml
-	./render_template faculty.rbhtml > faculty.html
+	./render_template faculty.rbhtml > $(DEPLOY_FOLDER)/faculty.html
 
 software: templates/software.rbhtml templates/_layout.rbhtml
-	./render_template software.rbhtml > software.html
+	./render_template software.rbhtml > $(DEPLOY_FOLDER)/software.html
 
 seminar: templates/seminar.rbhtml templates/_layout.rbhtml
-	./render_template seminar.rbhtml > seminar.html
-
-
-fonts:
-
+	./render_template seminar.rbhtml > $(DEPLOY_FOLDER)/seminar.html

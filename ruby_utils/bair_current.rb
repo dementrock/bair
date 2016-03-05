@@ -1,9 +1,11 @@
+require_relative "./settings"
 require "google/api_client"
 require "google_drive"
 require "pry"
 require "active_support/all"
 require "firebase"
 require "cloudinary"
+require 'open-uri'
 
 def get_sorted_rows(faculty_list)
   session = GoogleDrive.saved_session(nil, nil, ENV["BAIR_GOOGLE_DRIVE_CLIENT_ID"], ENV["BAIR_GOOGLE_DRIVE_CLIENT_SECRET"])
@@ -83,7 +85,7 @@ def get_sorted_rows(faculty_list)
       STDERR.puts x
     end
     cleanup = cleanup_position[normalized]
-    x.merge(raw_position: cleanup, position: position_text[cleanup])
+    x.merge(raw_position: cleanup, position: position_text[cleanup] || x[:position])
   end
 
   all_rows
@@ -135,7 +137,53 @@ def ensure_student_face_images!(sorted_rows)
       key = Digest::MD5.hexdigest(row[:image_url])
       if processed_images.include?(key)
         id = processed_images[key]["public_id"]
-        row[:cropped_image_url] = Cloudinary::Utils.cloudinary_url(id, width: 200, height: 200, crop: :thumb, gravity: :face, radius: :max, format: "jpg")
+        row[:remote_cropped_image_url] = Cloudinary::Utils.cloudinary_url(id, width: 200, height: 200, crop: :thumb, gravity: :face, radius: :max, format: "jpg")
+      end
+    end
+  end
+  sorted_rows = sorted_rows.reject{|x| x[:remote_cropped_image_url].blank?}
+  sorted_rows
+end
+
+def ensure_local_student_face_images!(sorted_rows)
+  base_uri = "https://bair-dev.firebaseio.com"
+  cli_key = "local_student_face_images_v4"
+
+  cli = Firebase::Client.new(base_uri)
+
+  processed_images = cli.get(cli_key).body || {}
+  processed_keys = processed_images.keys
+  todo_images = sorted_rows.map{|x| [x[:remote_cropped_image_url], x]}.reject{|x| processed_keys.include?(Digest::MD5.hexdigest(x[0]))}
+
+  Cloudinary.config do |config|
+    config.cloud_name = ENV["CLOUDINARY_CLOUD_NAME"]
+    config.api_key = ENV["CLOUDINARY_API_KEY"]
+    config.api_secret = ENV["CLOUDINARY_API_SECRET"]
+  end
+
+  todo_images.each do |image_url, content|
+    STDERR.puts "Processing #{image_url}..."
+    STDERR.puts "Downloading image..."
+    begin
+      file_name = Digest::MD5.hexdigest(image_url) + ".jpg"
+      open("#{STUDENT_CLOUDINARY_CACHE_PATH}/#{file_name}", 'wb') do |file|
+        file << open(image_url).read
+      end
+      processed_images = cli.get(cli_key).body || {}
+      processed_images[Digest::MD5.hexdigest(image_url)] = file_name
+      # save after every update
+      cli.set(cli_key, processed_images)
+    rescue Exception => e
+      STDERR.puts e
+      STDERR.puts content
+      STDERR.puts "Continuing"
+    end
+  end
+  sorted_rows.each do |row|
+    unless row[:remote_cropped_image_url].blank?
+      key = Digest::MD5.hexdigest(row[:remote_cropped_image_url])
+      if processed_images.include?(key)
+        row[:cropped_image_url] = "#{STUDENT_WEB_CLOUDINARY_CACHE_PATH}/#{key}.jpg"
       end
     end
   end
@@ -148,5 +196,5 @@ if __FILE__ == $0
   faculty_list = get_faculty_list
   sorted_rows = get_sorted_rows(faculty_list)
   sorted_rows = ensure_student_face_images!(sorted_rows)
-
+  sorted_rows = ensure_local_student_face_images!(sorted_rows)
 end
