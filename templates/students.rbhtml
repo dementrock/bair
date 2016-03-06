@@ -8,14 +8,22 @@
   if ARGV[1]
     sorted_rows = sorted_rows.select{|x| x[:raw_position].to_s == ARGV[1].to_s}
   end
+
+  categories = [
+    { text: "Post-docs", selector: lambda {|x| x[:raw_position] == :postdoc}, show_position: false, },
+    { text: "PhD Students", selector: lambda {|x| x[:raw_position] == :phd}, show_position: false, },
+    { text: "Master's Students", selector: lambda {|x| x[:raw_position] == :master}, show_position: false, },
+    { text: "Undergraduates", selector: lambda {|x| x[:raw_position] == :undergraduate}, show_position: false, },
+    { text: "Others", selector: lambda {|x| x[:raw_position].nil? }, show_position: true, },
+  ]
 ?>
 
-<div class="features-wrapper">
+<div class="features-wrapper" id="students_list">
   <section class="features fellows container">
 
     <h2 id="fellowships">Students</h2>
 
-    <div class="features-wrapper">
+    <div class="features-wrapper" style="padding-top: 1em; padding-bottom: 4em;" >
         <div id="index_navs">
             |
             <a href="students.html">All</a>
@@ -30,36 +38,26 @@
             |
         </div>
     </div>
-
-    <?rb sorted_rows.each_slice(4) do |slice_rows| ?>
-      <div class="row">
-        <?rb slice_rows.each do |row| ?>
-          <div class="3u">
-            <div class="gallery">
-              <div>
-                <?rb if not row[:webpage].blank? ?>
-                  <a href="${row[:webpage]}" class="image">
-                <?rb else ?>
-                  <span class="image">
-                <?rb end ?>
-                    <img src="${row[:cropped_image_url]}" alt="${row[:first_name]} ${row[:last_name]}" />
-                    <span>${row[:first_name]} ${row[:last_name]}</span>
-                <?rb if not row[:webpage].blank? ?>
-                  </a>
-                <?rb else ?>
-                  </span>
-                <?rb end ?>
-              </div>
-            </div>
-            <p>
-            ${row[:position]} <br>
-            Advisor: #{row[:advisor]} <br>
-            Research Interests: ${row[:research_interests]}
-            </p>
-          </div>
+    <?rb if ARGV[1] ?>
+        <?rb @student_list = sorted_rows ?>
+        <?rb @category = {} ?>
+        <?rb import('_student_list.rbhtml') ?>
+    <?rb else ?>
+        <?rb categories.each_with_index do |cat, idx| ?>
+            <?rb if idx == 0 ?>
+                <h3 class="student-category" style="padding-top: 0em; padding-bottom: 1em;">${cat[:text]}</h3>
+            <?rb else ?>
+                <h3 class="student-category" style="padding-top: 3em; padding-bottom: 1em;">${cat[:text]}</h3>
+            <?rb end ?>
+            <?rb @category = cat ?>
+            <?rb @student_list = sorted_rows.select(&cat[:selector]) ?>
+            <?rb import('_student_list.rbhtml') ?>
         <?rb end ?>
-      </div>
     <?rb end ?>
   </section>
 </div>
-
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".student-interest-short").dotdotdot();
+});
+</script>

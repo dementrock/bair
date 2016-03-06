@@ -20,6 +20,7 @@
         <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.dropotron.js"></script>
+        <script src="js/jquery.dotdotdot.min.js"></script>
         <script src="js/config.js"></script>
         <script src="js/skel.min.js"></script>
         <script src="js/skel-panels.min.js"></script>
@@ -37,17 +38,31 @@
             <!-- Header -->
             <div id="header" class="container">
                 <!-- Logo -->
-                <h1 id="logo">
+                <!--<h1 id="logo">
                     <a id="home" href="#">Berkeley Artificial Intelligence Research Lab</a>
-                </h1>
+                </h1>-->
                 <!-- Nav -->
                 <nav id="nav">
-                    <ul>
+                    <ul style="padding-top: 10px; padding-bottom: 2em">
                             <li>
-                                <a href="index.html#header" class="icon icon-home"><span>BAIR</span></a>
+                                <a href="index.html#header" class="">
+                                  <span style="
+                                        position: relative;
+                                            width: 211px;
+                                                display: inline-block;
+                                                    height: 10px;
+                                                    ">
+                                    <img src="images/logo.png" style="
+                                        position: absolute;
+                                            left: 0;
+                                                top: -30px;
+                                                "/>
+                                  </span>
+                                </a>
                             </li>
+
                             <li>
-                                <a href="#header" class="icon icon-user"><span>People</span></a>
+                                <a href="#header"><span>People</span></a>
                                     <ul>
                                             <li><a href="faculty.html">Faculty</a></li>
                                             <li><a href="students.html">Students</a></li>
@@ -55,19 +70,21 @@
                                     </ul>
                             </li>
                             <li>
-                                <a href="courses.html" class="icon icon-book"><span>Courses</span></a>
+                                <a href="#header"><span>Academics</span></a>
+                                    <ul>
+                                            <li><a href="courses.html">Courses</a></li>
+                                            <li><a href="seminar.html">Seminar</a></li>
+                                            <li><a href="textbooks.html">Textbooks</a></li>
+                                    </ul>
                             </li>
                             <li>
-                                <a href="seminar.html" class="icon icon-book"><span>Seminar</span></a>
+                                <a href="software.html"><span>Software</span></a>
                             </li>
                             <li>
-                                <a href="software.html" class="icon icon-book"><span>Software</span></a>
+                                <a href="sponsor.html"><span>Industrial Affiliates</span></a>
                             </li>
                             <li>
-                                <a href="sponsor.html" class="icon icon-bar-chart"><span>Industrial Affiliates</span></a>
-                            </li>
-                            <li>
-                                <a href="getting_involved.html" class="icon icon-book"><span>Getting Involved</span></a>
+                                <a href="getting_involved.html"><span>Getting Involved</span></a>
                             </li>
                     </ul>
                 </nav>
@@ -120,6 +137,11 @@
               Position at BAIR: post-doc.
               Advisor: <a href="http://www.cs.cmu.edu/~efros/">Alyosha Efros</a></li>
               <li>
+                Sivaraman Balakrishnan﻿.
+              Current Affiliation: Assistant Professor, CMU.
+              Position at BAIR: Post-doc.
+              Advisor: <a href="https://www.stat.berkeley.edu/~binyu/">Bin Yu</a></li>
+              <li>
                 Jiashi Feng.
               Current Affiliation: NUS.
               Position at BAIR: Postdoc.
@@ -141,6 +163,29 @@
               Current Affiliation: CWI, Researcher Amsterdam.
               Position at BAIR: post-doc.
               Advisor: <a href="http://www.stat.berkeley.edu/~bartlett/">Peter Bartlett</a></li>
+              <li>
+              <a href="http://www.laurentlessard.com/">Laurent
+                Lessard.</a>
+              Current Affiliation: Assistant Professor.
+              Position at BAIR: Post Doc.
+              Advisor: <a href="http://simons.berkeley.edu/people/benjamin-recht">Ben Recht</a></li>
+              <li>
+                Frauke Oldewurtel.
+              Current Affiliation: Research Fellow, ETHZ.
+              Position at BAIR: Postdoc.
+              Advisor: <a href="http://www.eecs.berkeley.edu/~tomlin/">Claire Tomlin</a></li>
+              <li>
+              <a href="http://www.sametoymak.com/">Samet
+                Oymak.</a>
+              Current Affiliation: Software Engineer.
+              Position at BAIR: Post Doc.
+              Advisor: <a href="http://simons.berkeley.edu/people/benjamin-recht">Ben Recht</a></li>
+              <li>
+              <a href="http://www-bcf.usc.edu/~soltanol/">Mahdi
+                Soltanolkotabi.</a>
+              Current Affiliation: Assistant Professor.
+              Position at BAIR: Post Doc.
+              Advisor: <a href="http://simons.berkeley.edu/people/benjamin-recht">Ben Recht</a></li>
             </ul>
           </header>
         </article>
@@ -171,6 +216,16 @@
               Position at BAIR: postdoc.
               Advisor: <a href="http://www.cs.berkeley.edu/~jordan/">Michael I. Jordan</a></li>
               <li>
+                Antony Joseph.
+              Current Affiliation: Staff Data Scientist, Walmart eCommerce .
+              Position at BAIR: Post-doc.
+              Advisor: <a href="https://www.stat.berkeley.edu/~binyu/">Bin Yu</a></li>
+              <li>
+                Shahab Kaynama.
+              Current Affiliation: Clearpath Robotics.
+              Position at BAIR: Postdoc.
+              Advisor: <a href="http://www.eecs.berkeley.edu/~tomlin/">Claire Tomlin</a></li>
+              <li>
               <a href="http://web.cs.ucdavis.edu/~yjlee/">Yong Jae
                 Lee.</a>
               Current Affiliation: UC Davis, assistant professor.
@@ -188,6 +243,11 @@
               Current Affiliation: Post Doc, University of Auckland.
               Position at BAIR: Post Doc.
               Advisor: <a href="http://cocosci.berkeley.edu/tom/">Tom Griffiths</a></li>
+              <li>
+                Omar Oreifej.
+              Current Affiliation: Synaptics.
+              Position at BAIR: PostDoc.
+              Advisor: <a href="http://www-video.eecs.berkeley.edu/~avz/">Avideh Zakhor</a></li>
               <li>
                 Jia Pan.
               Current Affiliation: City U. of Hong Kong.
@@ -227,6 +287,17 @@
               Current Affiliation: Assistant Professor, UCLA.
               Position at BAIR: postdoc.
               Advisor: <a href="http://www.cs.berkeley.edu/~jordan/">Michael I. Jordan</a></li>
+              <li>
+              <a href="http://inside.mines.edu/~gtang/">Gongguo
+                Tang.</a>
+              Current Affiliation: Assistant Professor.
+              Position at BAIR: Post Doc.
+              Advisor: <a href="http://simons.berkeley.edu/people/benjamin-recht">Ben Recht</a></li>
+              <li>
+                Melanie Zeilinger.
+              Current Affiliation: Assistant Professor, Dept of Mechanical and Process Eng, ETHZ.
+              Position at BAIR: Postdoc.
+              Advisor: <a href="http://www.eecs.berkeley.edu/~tomlin/">Claire Tomlin</a></li>
             </ul>
           </header>
         </article>
@@ -240,16 +311,21 @@
               Position at BAIR: Postdoc.
               Advisor: <a href="http://www.eecs.berkeley.edu/~trevor/">Trevor Darrell</a></li>
               <li>
-                Brian Kulis.
-              Current Affiliation: BU.
-              Position at BAIR: Postdoc.
-              Advisor: <a href="http://www.eecs.berkeley.edu/~trevor/">Trevor Darrell</a></li>
+                Taesup Moon.
+              Current Affiliation: Research Staff Member, Samsung.
+              Position at BAIR: Post-doc.
+              Advisor: <a href="https://www.stat.berkeley.edu/~binyu/">Bin Yu</a></li>
               <li>
               <a href="http://www.columbia.edu/~jwp2128">John
                 Paisley.</a>
               Current Affiliation: Assistant Professor, Columbia University.
               Position at BAIR: postdoc.
               Advisor: <a href="http://www.cs.berkeley.edu/~jordan/">Michael I. Jordan</a></li>
+              <li>
+                Pan Gun Park.
+              Current Affiliation: ETRI, Korea.
+              Position at BAIR: Postdoc.
+              Advisor: <a href="http://www.eecs.berkeley.edu/~tomlin/">Claire Tomlin</a></li>
               <li>
               <a href="http://www.stat.berkeley.edu/~jen">Jennifer
                 Tom.</a>
@@ -291,16 +367,36 @@
               Position at BAIR: Postdoc.
               Advisor: <a href="http://www.eecs.berkeley.edu/~trevor/">Trevor Darrell</a></li>
               <li>
+                Soulaiman Itani.
+              Current Affiliation: Atheer Labs.
+              Position at BAIR: Postdoc.
+              Advisor: <a href="http://www.eecs.berkeley.edu/~tomlin/">Claire Tomlin</a></li>
+              <li>
               <a href="http://www.cs.berkeley.edu/~jtma">Justin
                 Ma.</a>
               Current Affiliation: Software Engineer, Google.
               Position at BAIR: postdoc.
               Advisor: <a href="http://www.cs.berkeley.edu/~jordan/">Michael I. Jordan</a></li>
               <li>
+                Julien Mairal.
+              Current Affiliation: Research Scientist, INRIA .
+              Position at BAIR: Post-doc.
+              Advisor: <a href="https://www.stat.berkeley.edu/~binyu/">Bin Yu</a></li>
+              <li>
                 Matthieu Salzmann.
               Current Affiliation: ANU.
               Position at BAIR: Postdoc.
               Advisor: <a href="http://www.eecs.berkeley.edu/~trevor/">Trevor Darrell</a></li>
+              <li>
+                Ryo Takei.
+              Current Affiliation: Markit Analytics.
+              Position at BAIR: Postdoc.
+              Advisor: <a href="http://www.eecs.berkeley.edu/~tomlin/">Claire Tomlin</a></li>
+              <li>
+                Hau-tieng Wu.
+              Current Affiliation: Assistant Professor, University of Toronto.
+              Position at BAIR: Post-doc.
+              Advisor: <a href="https://www.stat.berkeley.edu/~binyu/">Bin Yu</a></li>
             </ul>
           </header>
         </article>
@@ -331,17 +427,42 @@
               Position at BAIR: postdoc.
               Advisor: <a href="http://www.cs.berkeley.edu/~jordan/">Michael I. Jordan</a></li>
               <li>
+                Ehsan Haghani.
+              Current Affiliation: Cisco.
+              Position at BAIR: PostDoc.
+              Advisor: <a href="http://www-video.eecs.berkeley.edu/~avz/">Avideh Zakhor</a></li>
+              <li>
+                Norihiko Kawai.
+              
+              Position at BAIR: PostDoc.
+              Advisor: <a href="http://www-video.eecs.berkeley.edu/~avz/">Avideh Zakhor</a></li>
+              <li>
+                Bong Keun Kim.
+              
+              Position at BAIR: PostDoc.
+              Advisor: <a href="http://www-video.eecs.berkeley.edu/~avz/">Avideh Zakhor</a></li>
+              <li>
               <a href="http://people.bu.edu/bkulis/">Brian
                 Kulis.</a>
               Current Affiliation: Asst. Prof. at Boston University.
               Position at BAIR: postdoc.
-              Advisor: <a href="https://www.cs.berkeley.edu/~russell/">Stuart Russell</a></li>
+              Advisor: <a href="https://www.cs.berkeley.edu/~russell/">Stuart Russell</a>, <a href="http://www.eecs.berkeley.edu/~trevor/">Trevor Darrell</a></li>
+              <li>
+                Xu Ma.
+              
+              Position at BAIR: PostDoc.
+              Advisor: <a href="http://www-video.eecs.berkeley.edu/~avz/">Avideh Zakhor</a></li>
               <li>
               <a href="http://research.google.com/pubs/author36233.html">Afshin
                 Rostamizadeh.</a>
               Current Affiliation: Google Research NY, Research Scientist.
               Position at BAIR: post-doc.
               Advisor: <a href="http://www.stat.berkeley.edu/~bartlett/">Peter Bartlett</a></li>
+              <li>
+                Victor Sanchez.
+              Current Affiliation: Lecturer, Imperial College.
+              Position at BAIR: PostDoc.
+              Advisor: <a href="http://www-video.eecs.berkeley.edu/~avz/">Avideh Zakhor</a></li>
               <li>
               <a href="http://www.cs.berkeley.edu/~xshyr">Alex
                 Shyr.</a>
@@ -353,6 +474,11 @@
               Current Affiliation: U Toronot.
               Position at BAIR: Postdoc.
               Advisor: <a href="http://www.eecs.berkeley.edu/~trevor/">Trevor Darrell</a></li>
+              <li>
+                Wei Zhang.
+              Current Affiliation: Assistant Professor, ECE, OSU.
+              Position at BAIR: Postdoc.
+              Advisor: <a href="http://www.eecs.berkeley.edu/~tomlin/">Claire Tomlin</a></li>
               <li>
                 Jur van den Berg.
               
@@ -372,6 +498,18 @@
               Position at BAIR: PostDoc.
               Advisor: <a href="http://www.cs.berkeley.edu/~klein/">Dan Klein</a></li>
               <li>
+                Kyle Jia.
+              Current Affiliation: Assistant Professor, Peking University, China. .
+              Position at BAIR: Post-doc.
+              Advisor: <a href="https://www.stat.berkeley.edu/~binyu/">Bin Yu</a></li>
+              <li>
+              <a href="https://www.ruhr-uni-bochum.de/ika/mitarbeiter/kolossa_public.htm">Dorothea
+                Kolossa.</a>
+              Current Affiliation: Associate Professor, 	
+Ruhr-Universität Bochum.
+              Position at BAIR: post-doc.
+              Advisor: <a href="http://www.eecs.berkeley.edu/~keutzer/">Kurt Keutzer</a></li>
+              <li>
               <a href="http://www.cs.berkeley.edu/~asimma">Alex
                 Simma.</a>
               Current Affiliation: Financial Researcher, Tower Research Capital.
@@ -390,17 +528,21 @@
             <h2>2009</h2>
             <ul>
               <li>
+                Alessandro Abate.
+              Current Affiliation: Associate Professor, CS, Oxford.
+              Position at BAIR: Postdoc.
+              Advisor: <a href="http://www.eecs.berkeley.edu/~tomlin/">Claire Tomlin</a></li>
+              <li>
+                Pradeep Ravikumar.
+              Current Affiliation: Associate Professor, University of Texas, Austin..
+              Position at BAIR: Post-doc.
+              Advisor: <a href="https://www.stat.berkeley.edu/~binyu/">Bin Yu</a></li>
+              <li>
               <a href="http://cs.brown.edu/~sudderth">Erik
                 Sudderth.</a>
               Current Affiliation: Assistant Professor, Brown University.
               Position at BAIR: postdoc.
-              Advisor: <a href="http://www.cs.berkeley.edu/~jordan/">Michael I. Jordan</a></li>
-              <li>
-              <a href="http://cs.brown.edu/~sudderth/">Erik
-                Sudderth.</a>
-              Current Affiliation: Asst. Prof. at Brown University.
-              Position at BAIR: postdoc.
-              Advisor: <a href="https://www.cs.berkeley.edu/~russell/">Stuart Russell</a></li>
+              Advisor: <a href="http://www.cs.berkeley.edu/~jordan/">Michael I. Jordan</a>, <a href="https://www.cs.berkeley.edu/~russell/">Stuart Russell</a></li>
               <li>
               <a href="http://homepages.inf.ed.ac.uk/csutton/">Charles
                 Sutton.</a>
@@ -420,6 +562,11 @@
           <header>
             <h2>2008</h2>
             <ul>
+              <li>
+                Ethan Anderes.
+              Current Affiliation: Assistant Professor, University of California, Davis.
+              Position at BAIR: Post-doc.
+              Advisor: <a href="https://www.stat.berkeley.edu/~binyu/">Bin Yu</a></li>
               <li>
                 David Demirdjian.
               Current Affiliation: Toyota.
@@ -481,6 +628,11 @@
             <h2>2006</h2>
             <ul>
               <li>
+                Nicolai Meinshausen.
+              Current Affiliation: Professor,  ETH Zurich .
+              Position at BAIR: Post-doc.
+              Advisor: <a href="https://www.stat.berkeley.edu/~binyu/">Bin Yu</a></li>
+              <li>
               <a href="http://www.seas.upenn.edu/~taskar">Ben
                 Taskar.</a>
               Current Affiliation: Assistant Professor, University of Washington.
@@ -504,7 +656,12 @@
                 Seeger.</a>
               Current Affiliation: Senior Machine Learning Scientist, Amazon.
               Position at BAIR: postdoc.
-              Advisor: <a href="http://www.cs.berkeley.edu/~jordan/">Michael I. Jordan</a></li>
+              Advisor: <a href="http://www.cs.berkeley.edu/~jordan/">Michael I. Jordan</a>, <a href="http://www.stat.berkeley.edu/~bartlett/">Peter Bartlett</a></li>
+              <li>
+                Sriram Shankaran.
+              Current Affiliation: GE.
+              Position at BAIR: Postdoc.
+              Advisor: <a href="http://www.eecs.berkeley.edu/~tomlin/">Claire Tomlin</a></li>
               <li>
               <a href="http://www.stats.ox.ac.uk/~teh">Yee-Whye
                 Teh.</a>
@@ -519,11 +676,15 @@
             <h2>2004</h2>
             <ul>
               <li>
-              <a href="http://lapmal.epfl.ch/page-75410-en.html">Matthias
-                Seeger.</a>
-              Current Affiliation: Amazon Berlin, Sr. Machine Learning Scientist.
-              Position at BAIR: post-doc.
-              Advisor: <a href="http://www.stat.berkeley.edu/~bartlett/">Peter Bartlett</a></li>
+                Jianghai Hu.
+              Current Affiliation: Associate Professor, EE, Purdue.
+              Position at BAIR: Postdoc.
+              Advisor: <a href="http://www.eecs.berkeley.edu/~tomlin/">Claire Tomlin</a></li>
+              <li>
+                Dusan Stipanovic.
+              Current Affiliation: Associate Professor, Systems Engineering, UIUC.
+              Position at BAIR: Postdoc.
+              Advisor: <a href="http://www.eecs.berkeley.edu/~tomlin/">Claire Tomlin</a></li>
               <li>
               <a href="http://www.cs.berkeley.edu/~wainwrig">Martin
                 Wainwright.</a>
@@ -585,7 +746,7 @@
                 Weiss.</a>
               Current Affiliation: Professor, Hebrew University.
               Position at BAIR: postdoc.
-              Advisor: <a href="http://www.cs.berkeley.edu/~jordan/">Michael I. Jordan</a></li>
+              Advisor: <a href="http://www.cs.berkeley.edu/~jordan/">Michael I. Jordan</a>, <a href="http://www.cs.berkeley.edu/~malik/">Jitendra Malik</a></li>
               <li>
               <a href="http://www.cs.ox.ac.uk/people/nando.defreitas/">Nando
                 de Freitas.</a>
@@ -788,13 +949,16 @@
               <a href="seminar.html">Seminar</a>
               |
 
+              <a href="textbooks.html">Textbooks</a>
+              |
+
               <a href="software.html">Software</a>
               |
 
               <a href="sponsor.html">Industrial Affiliates</a>
-              |
 
               <a href="getting_involved.html">Getting Involved</a>
+              |
               |
             </div>
         </div>

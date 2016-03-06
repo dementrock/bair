@@ -66,7 +66,7 @@ def get_sorted_rows(faculty_list)
 
 
   all_rows
-    .group_by{|x| [x[:year], x[:first_name], x[:last_name]]}
+    .group_by{|x| [x[:first_name].strip, x[:last_name].strip]}
     .to_a.map{|x| x[1][0].merge(advisor: x[1].map{|y|
       %Q{<a href="#{advisor_url_dict[y[:advisor]]}">#{y[:advisor]}</a>}
     }.join(", "))} # join advisors

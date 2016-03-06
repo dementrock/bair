@@ -20,7 +20,7 @@ def get_sorted_rows
   dict_keys = rows[0]
   replaced_keys = dict_keys.map{|x| dict_keys_sub[x]}
   dict_rows = rows[1..-1].map{|row| Hash[replaced_keys.zip(row)]}
-  dict_rows
+  dict_rows.sort_by{|x| x[:name].downcase}
 end
 
 if __FILE__ == $0

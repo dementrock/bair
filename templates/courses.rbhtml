@@ -13,30 +13,34 @@
 </div>
 <div id="main-wrapper" style="margin-top: 0; padding-top: 0">
 
-    <!-- Main -->
-    <div id="main" class="container">
-        <div class="row">
-            <h2 id="research" style="text-align: center">Undergraduate Courses</strong></h2>
-            <!-- Content -->
-            <div id="content" class="12u">
-                <?rb ug_list.each do |course| ?>
-                  <header>
-                      <h2><a href="${course[:url] || "#"}">${course[:number]}: ${course[:name]}</a></h2>
-                  </header>
-                  <!--<p>${course[:description]}</p>-->
-                <?rb end ?>
-            </div>
-            <h2 id="research" style="text-align: center">Graduate Courses</strong></h2>
-            <!-- Content -->
-            <div id="content" class="12u">
-                <?rb grad_list.each do |course| ?>
-                  <header>
-                      <h2><a href="${course[:url] || "#"}">${course[:number]}: ${course[:name]}</a></h2>
-                  </header>
-                  <!--<p>${course[:description]}</p>-->
-                <?rb end ?>
-            </div>
-
-        </div>
+    <div class="features-wrapper">
+      <!-- Features -->
+      <section class="features container">
+          <header>
+              <h2 id="research" style="text-align: center">Undergraduate Courses</strong></h2>
+          </header>
+          <div class="markdown-container">
+            <?rb ug_list.each do |course| ?>
+            <p>
+            <strong><a href="${course[:url] || "#"}">${course[:number]}</a></strong>: ${course[:name]}
+            </p>
+            <?rb end ?>
+          </div>
+      </section>
+    </div>
+    <div class="features-wrapper">
+      <!-- Features -->
+      <section class="features container">
+          <header>
+              <h2 id="research" style="text-align: center">Graduate Courses</strong></h2>
+          </header>
+          <div class="markdown-container">
+            <?rb grad_list.each do |course| ?>
+            <p>
+            <strong><a href="${course[:url] || "#"}">${course[:number]}</a></strong>: ${course[:name]}
+            </p>
+            <?rb end ?>
+          </div>
+      </section>
     </div>
 </div>

@@ -1433,3 +1433,40 @@
   margin-left: 0.5em;
   margin-right: 0.5em;
 }
+
+#students_list .gallery .name {
+  font-size: 0.8em;
+  line-height: 1.5em;
+}
+
+#students_list .features .student-info {
+  font-size: 0.8em;
+  line-height: 1.5em;
+  text-align: center;
+}
+
+.student-entry .student-interest {
+  visibility: hidden;
+}
+
+.student-entry:hover .student-interest {
+  visibility: visible;
+}
+
+.student-entry .student-interest-wrapper {
+  position: relative;
+}
+
+.student-entry .student-interest-short {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3em;
+  text-align: center;
+  overflow: hidden;
+}
+.student-entry:hover .student-interest-short {
+  visibility: hidden;
+}
+

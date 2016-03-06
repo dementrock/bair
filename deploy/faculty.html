@@ -20,6 +20,7 @@
         <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.dropotron.js"></script>
+        <script src="js/jquery.dotdotdot.min.js"></script>
         <script src="js/config.js"></script>
         <script src="js/skel.min.js"></script>
         <script src="js/skel-panels.min.js"></script>
@@ -37,17 +38,31 @@
             <!-- Header -->
             <div id="header" class="container">
                 <!-- Logo -->
-                <h1 id="logo">
+                <!--<h1 id="logo">
                     <a id="home" href="#">Berkeley Artificial Intelligence Research Lab</a>
-                </h1>
+                </h1>-->
                 <!-- Nav -->
                 <nav id="nav">
-                    <ul>
+                    <ul style="padding-top: 10px; padding-bottom: 2em">
                             <li>
-                                <a href="index.html#header" class="icon icon-home"><span>BAIR</span></a>
+                                <a href="index.html#header" class="">
+                                  <span style="
+                                        position: relative;
+                                            width: 211px;
+                                                display: inline-block;
+                                                    height: 10px;
+                                                    ">
+                                    <img src="images/logo.png" style="
+                                        position: absolute;
+                                            left: 0;
+                                                top: -30px;
+                                                "/>
+                                  </span>
+                                </a>
                             </li>
+
                             <li>
-                                <a href="#header" class="icon icon-user"><span>People</span></a>
+                                <a href="#header"><span>People</span></a>
                                     <ul>
                                             <li><a href="faculty.html">Faculty</a></li>
                                             <li><a href="students.html">Students</a></li>
@@ -55,19 +70,21 @@
                                     </ul>
                             </li>
                             <li>
-                                <a href="courses.html" class="icon icon-book"><span>Courses</span></a>
+                                <a href="#header"><span>Academics</span></a>
+                                    <ul>
+                                            <li><a href="courses.html">Courses</a></li>
+                                            <li><a href="seminar.html">Seminar</a></li>
+                                            <li><a href="textbooks.html">Textbooks</a></li>
+                                    </ul>
                             </li>
                             <li>
-                                <a href="seminar.html" class="icon icon-book"><span>Seminar</span></a>
+                                <a href="software.html"><span>Software</span></a>
                             </li>
                             <li>
-                                <a href="software.html" class="icon icon-book"><span>Software</span></a>
+                                <a href="sponsor.html"><span>Industrial Affiliates</span></a>
                             </li>
                             <li>
-                                <a href="sponsor.html" class="icon icon-bar-chart"><span>Industrial Affiliates</span></a>
-                            </li>
-                            <li>
-                                <a href="getting_involved.html" class="icon icon-book"><span>Getting Involved</span></a>
+                                <a href="getting_involved.html"><span>Getting Involved</span></a>
                             </li>
                     </ul>
                 </nav>
@@ -86,161 +103,170 @@
                 margin: 0 0 1.5em 0;
                 line-height: 1.75em;
                 color: inherit;
-                ">*: Member of Steering Committee</h6>
+                ">*: Member of Steering Committee <br> **: Emeritus</h6>
             <br>
             <ul class="members pi">
                     <div class="row">
 <li>
-    <a href="http://www.cs.berkeley.edu/~pabbeel/"><img src="images/cloudinary_cache/faculty/8a8c6fd7035181662df5e1f6d8aae651.png" alt="Pieter Abbeel"></a>
+    <a href="http://www.cs.berkeley.edu/~pabbeel/"><img src="images/cloudinary_cache/faculty/87e2ac3c4f2f726d5a822f812525faf8.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_0.9/nzj1vkwzyrppdqvvwwdl.png" alt="Pieter Abbeel"></a>
     <p><a
 href="http://www.cs.berkeley.edu/~pabbeel/">Pieter<br>Abbeel *</a></p>
 </li>
 <li>
-    <a href="http://www.stat.berkeley.edu/~bartlett/"><img src="images/cloudinary_cache/faculty/8b871a00c23ea5087c5cddb91b2b891f.png" alt="Peter Bartlett"></a>
+    <a href="http://www.stat.berkeley.edu/~bartlett/"><img src="images/cloudinary_cache/faculty/3459aef2bbf63c2f4dccc9288e6988a6.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/oyrux4syrvwrubz63qx3.png" alt="Peter Bartlett"></a>
     <p><a
 href="http://www.stat.berkeley.edu/~bartlett/">Peter<br>Bartlett *</a></p>
 </li>
 <li>
-    <a href="http://www.eecs.berkeley.edu/~trevor/"><img src="images/cloudinary_cache/faculty/d25bd16ab3beac543599abf0c04674e8.png" alt="Trevor Darrell"></a>
+    <a href="http://www.eecs.berkeley.edu/~trevor/"><img src="images/cloudinary_cache/faculty/d6350228aadfaa532661e4d8c8541155.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/zp08xqauuymglf0ahvbs.png" alt="Trevor Darrell"></a>
     <p><a
 href="http://www.eecs.berkeley.edu/~trevor/">Trevor<br>Darrell *</a></p>
 </li>
 <li>
-    <a href="http://www.eecs.berkeley.edu/~anca"><img src="images/cloudinary_cache/faculty/5e55b1db24567757f700787cc7a80c9e.png" alt="Anca Dragan"></a>
+    <a href="http://www.eecs.berkeley.edu/~anca"><img src="images/cloudinary_cache/faculty/66ab0af45ac81eac9f15496ff35b0090.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/z3so6v4cniktn3iedzz3.png" alt="Anca Dragan"></a>
     <p><a
 href="http://www.eecs.berkeley.edu/~anca">Anca<br>Dragan *</a></p>
 </li>
 <li>
-    <a href="http://www.cs.cmu.edu/~efros/"><img src="images/cloudinary_cache/faculty/3697be57c64bf84efaeffa8ba84cc129.png" alt="Alyosha Efros"></a>
+    <a href="http://www.cs.cmu.edu/~efros/"><img src="images/cloudinary_cache/faculty/0a9aa26c5ccdaf13db57d70a1d4a6841.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/juxpvvwbdacedznvmz7p.png" alt="Alyosha Efros"></a>
     <p><a
 href="http://www.cs.cmu.edu/~efros/">Alyosha<br>Efros *</a></p>
 </li>
                     </div>
                     <div class="row">
 <li>
-    <a href="http://goldberg.berkeley.edu/"><img src="images/cloudinary_cache/faculty/e008802e28a820532788171372139be7.png" alt="Ken Goldberg"></a>
+    <a href="http://goldberg.berkeley.edu/"><img src="images/cloudinary_cache/faculty/55894761d528f505cdceaa53104ac60c.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/w1hvtkoibuvoakv3fskl.png" alt="Ken Goldberg"></a>
     <p><a
 href="http://goldberg.berkeley.edu/">Ken<br>Goldberg *</a></p>
 </li>
 <li>
-    <a href="http://www.cs.berkeley.edu/~jordan/"><img src="images/cloudinary_cache/faculty/fb9888422318068c93afcd474a2c5aea.png" alt="Michael I. Jordan"></a>
+    <a href="http://www.cs.berkeley.edu/~jordan/"><img src="images/cloudinary_cache/faculty/eed2c449abb68dfa76b83b28b94c5f52.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/ctxtpfgejz9u5heyspxx.png" alt="Michael I. Jordan"></a>
     <p><a
 href="http://www.cs.berkeley.edu/~jordan/">Michael I.<br>Jordan *</a></p>
 </li>
 <li>
-    <a href="http://www.cs.berkeley.edu/~klein/"><img src="images/cloudinary_cache/faculty/f559449a594956d05d14ad71e51aa660.png" alt="Dan Klein"></a>
+    <a href="http://www.cs.berkeley.edu/~klein/"><img src="images/cloudinary_cache/faculty/dd7a04a87d9949da7fac78450e8764f8.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/vxfbekindsswzm2jdheg.png" alt="Dan Klein"></a>
     <p><a
 href="http://www.cs.berkeley.edu/~klein/">Dan<br>Klein *</a></p>
 </li>
 <li>
-    <a href="http://www.cs.berkeley.edu/~malik/"><img src="images/cloudinary_cache/faculty/10271bca7dd2d8547171717a222f2a05.png" alt="Jitendra Malik"></a>
+    <a href="http://www.cs.berkeley.edu/~malik/"><img src="images/cloudinary_cache/faculty/27201f5ef861d53e23f4202d5faeb1b8.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/zo8k4gqqrzkfkx4qntkw.png" alt="Jitendra Malik"></a>
     <p><a
 href="http://www.cs.berkeley.edu/~malik/">Jitendra<br>Malik *</a></p>
 </li>
 <li>
-    <a href="https://www.cs.berkeley.edu/~russell/"><img src="images/cloudinary_cache/faculty/15589ec11f57dabc72047f0757a90d40.png" alt="Stuart Russell"></a>
+    <a href="https://www.cs.berkeley.edu/~russell/"><img src="images/cloudinary_cache/faculty/a160911fc30d63f7a78ca91fb72946ba.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/pdnmdv05bu6uedfb2p6c.png" alt="Stuart Russell"></a>
     <p><a
 href="https://www.cs.berkeley.edu/~russell/">Stuart<br>Russell *</a></p>
 </li>
                     </div>
                     <div class="row">
 <li>
-    <a href="http://www.eecs.berkeley.edu/~bajcsy/"><img src="images/cloudinary_cache/faculty/82ccaeac63a0073064399e96fb443c8a.png" alt="Ruzena Bajcsy"></a>
+    <a href="http://www.eecs.berkeley.edu/~bajcsy/"><img src="images/cloudinary_cache/faculty/6a71d4d57b1588c2b2bd6cab8e0b25bf.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/jhug3gvmpjiddr41ykbg.png" alt="Ruzena Bajcsy"></a>
     <p><a
 href="http://www.eecs.berkeley.edu/~bajcsy/">Ruzena<br>Bajcsy</a></p>
 </li>
 <li>
-    <a href="http://www.stat.berkeley.edu/~bruna"><img src="images/cloudinary_cache/faculty/b6de2878be73b025c5250732648d43b0.png" alt="Joan Bruna"></a>
+    <a href="http://www.stat.berkeley.edu/~bruna"><img src="images/cloudinary_cache/faculty/90875afc01cdd7eecd23d1a63d4c78c8.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/xspd4awk47u038m8fdsm.png" alt="Joan Bruna"></a>
     <p><a
 href="http://www.stat.berkeley.edu/~bruna">Joan<br>Bruna</a></p>
 </li>
 <li>
-    <a href="http://www.cs.berkeley.edu/~jfc/"><img src="images/cloudinary_cache/faculty/88b23fa951724f7e3afc0442eee06bb7.png" alt="John Canny"></a>
+    <a href="http://www.cs.berkeley.edu/~jfc/"><img src="images/cloudinary_cache/faculty/2aaea137c51ad267dfc3699bb2a00435.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/eyj6jvjq3lznmbvrd8rk.png" alt="John Canny"></a>
     <p><a
 href="http://www.cs.berkeley.edu/~jfc/">John<br>Canny</a></p>
 </li>
 <li>
-    <a href="http://www.denero.org/"><img src="images/cloudinary_cache/faculty/c3b0515c7c986ecae4013c417e1bdc17.png" alt="John DeNero"></a>
+    <a href="http://www.denero.org/"><img src="images/cloudinary_cache/faculty/744ac6ca74525e1e773bd4f7764f1150.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/jz05j0o5mvfcmlne1auo.png" alt="John DeNero"></a>
     <p><a
 href="http://www.denero.org/">John<br>DeNero</a></p>
 </li>
 <li>
-    <a href="http://www.eecs.berkeley.edu/~elghaoui/"><img src="images/cloudinary_cache/faculty/c5ee6237aa988079830f851277477f5a.png" alt="Laurent El Ghaoui"></a>
+    <a href="http://www.eecs.berkeley.edu/~elghaoui/"><img src="images/cloudinary_cache/faculty/cfa88b3d447e3da92a3d6de6dbe96645.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/vnimrxswzhkqrtcvfbxq.png" alt="Laurent El Ghaoui"></a>
     <p><a
 href="http://www.eecs.berkeley.edu/~elghaoui/">Laurent<br>El Ghaoui</a></p>
 </li>
                     </div>
                     <div class="row">
 <li>
-    <a href="http://robotics.eecs.berkeley.edu/~ronf/"><img src="images/cloudinary_cache/faculty/2dc4824e471df0cd63fde01fc71e0138.png" alt="Ron Fearing"></a>
+    <a href="http://robotics.eecs.berkeley.edu/~ronf/"><img src="images/cloudinary_cache/faculty/13d177833c43afeeb8eea62d2ce8aa3c.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/akyhc0yzkau6ghq8ipv6.png" alt="Ron Fearing"></a>
     <p><a
 href="http://robotics.eecs.berkeley.edu/~ronf/">Ron<br>Fearing</a></p>
 </li>
 <li>
-    <a href="http://www.eecs.berkeley.edu/~jegonzal/"><img src="images/cloudinary_cache/faculty/cb2749fb3a84d2d871d2e2cb48bbd860.png" alt="Joseph Gonzalez"></a>
+    <a href="http://www.eecs.berkeley.edu/~jegonzal/"><img src="images/cloudinary_cache/faculty/2cb174a75bc91875619c888fc6cbff13.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/bejhjunsqcg97cdt64il.png" alt="Joseph Gonzalez"></a>
     <p><a
 href="http://www.eecs.berkeley.edu/~jegonzal/">Joseph<br>Gonzalez</a></p>
 </li>
 <li>
-    <a href="http://cocosci.berkeley.edu/tom/"><img src="images/cloudinary_cache/faculty/7088bc7613796c279b9d599ac900e798.png" alt="Tom Griffiths"></a>
+    <a href="http://cocosci.berkeley.edu/tom/"><img src="images/cloudinary_cache/faculty/5084770949d11443f2866d00358db267.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/ofpfpnoijzqk41dlfoel.png" alt="Tom Griffiths"></a>
     <p><a
 href="http://cocosci.berkeley.edu/tom/">Tom<br>Griffiths</a></p>
 </li>
 <li>
-    <a href="http://www.eecs.berkeley.edu/~keutzer/"><img src="images/cloudinary_cache/faculty/c8d22ea9e277e5a36c60f8bed84210c5.png" alt="Kurt Keutzer"></a>
+    <a href="http://www.eecs.berkeley.edu/~keutzer/"><img src="images/cloudinary_cache/faculty/c21fe37b3486373373c3bd44f7c5c794.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/tt3ywaqhxy85mspzqb8y.png" alt="Kurt Keutzer"></a>
     <p><a
 href="http://www.eecs.berkeley.edu/~keutzer/">Kurt<br>Keutzer</a></p>
 </li>
 <li>
-    <a href="http://www.eecs.berkeley.edu/Faculty/Homepages/yirenng.html"><img src="images/cloudinary_cache/faculty/016f6c7b3e95bffc5640e27c548c2b1d.png" alt="Ren Ng"></a>
+    <a href="http://www.eecs.berkeley.edu/Faculty/Homepages/yirenng.html"><img src="images/cloudinary_cache/faculty/07ae900dbc75ba7b415da8089a01a13c.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/cku9pyoet4q8sehzckel.png" alt="Ren Ng"></a>
     <p><a
 href="http://www.eecs.berkeley.edu/Faculty/Homepages/yirenng.html">Ren<br>Ng</a></p>
 </li>
                     </div>
                     <div class="row">
 <li>
-    <a href="http://redwood.berkeley.edu/bruno/"><img src="images/cloudinary_cache/faculty/dfb6c6a5f85d926271adf97f48b52134.png" alt="Bruno Olshausen"></a>
+    <a href="http://redwood.berkeley.edu/bruno/"><img src="images/cloudinary_cache/faculty/f9103ee146fbbb40a95ec5fab032e511.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/wxa4lwd6gagmrbv7j8el.png" alt="Bruno Olshausen"></a>
     <p><a
 href="http://redwood.berkeley.edu/bruno/">Bruno<br>Olshausen</a></p>
 </li>
 <li>
-    <a href="http://simons.berkeley.edu/people/benjamin-recht"><img src="images/cloudinary_cache/faculty/9365400a78f3de941958382b4ca1f218.png" alt="Ben Recht"></a>
+    <a href="http://simons.berkeley.edu/people/benjamin-recht"><img src="images/cloudinary_cache/faculty/f9cd0289fd0086b34ca7c1c225da032d.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/ydjkdgijwq1ooacpiunk.png" alt="Ben Recht"></a>
     <p><a
 href="http://simons.berkeley.edu/people/benjamin-recht">Ben<br>Recht</a></p>
 </li>
 <li>
-    <a href="http://robotics.eecs.berkeley.edu/~sastry/"><img src="images/cloudinary_cache/faculty/d54217f70223bdffc81f354e3362d5a1.png" alt="Shankar Sastry"></a>
+    <a href="http://robotics.eecs.berkeley.edu/~sastry/"><img src="images/cloudinary_cache/faculty/fdd4d8e076320d067e2d8db8ca93f1be.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/jej8yixaxfhzysivczkv.png" alt="Shankar Sastry"></a>
     <p><a
 href="http://robotics.eecs.berkeley.edu/~sastry/">Shankar<br>Sastry</a></p>
 </li>
 <li>
-    <a href="http://www.eecs.berkeley.edu/~tomlin/"><img src="images/cloudinary_cache/faculty/565d42ea6f285292f79c4555b52fc579.png" alt="Claire Tomlin"></a>
+    <a href="http://www.eecs.berkeley.edu/~tomlin/"><img src="images/cloudinary_cache/faculty/d8249081ba7f38dd0580349783c3c477.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/k2pyo5444exsqfvme7qd.png" alt="Claire Tomlin"></a>
     <p><a
 href="http://www.eecs.berkeley.edu/~tomlin/">Claire<br>Tomlin</a></p>
 </li>
 <li>
-    <a href="https://www.eecs.berkeley.edu/~wainwrig/"><img src="images/cloudinary_cache/faculty/98c83d26b13b4387f022f49435129c40.png" alt="Martin Wainwright"></a>
+    <a href="https://www.eecs.berkeley.edu/~wainwrig/"><img src="images/cloudinary_cache/faculty/64173334a2e14fef16fc900401100cc8.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/lbgz5ayxdmbige4ubnmm.png" alt="Martin Wainwright"></a>
     <p><a
 href="https://www.eecs.berkeley.edu/~wainwrig/">Martin<br>Wainwright</a></p>
 </li>
                     </div>
                     <div class="row">
 <li>
-    <a href="http://www.cs.berkeley.edu/~zadeh/"><img src="images/cloudinary_cache/faculty/3ec27d1ae192cf0b6c7865c8dba87349.png" alt="Lofti Zadeh"></a>
+    <a href="https://www.stat.berkeley.edu/~binyu/"><img src="images/cloudinary_cache/faculty/6dfa19cb8538eed8b980cbd8742b80ad.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/mvbneugrnmcq6iouqk8z.png" alt="Bin Yu"></a>
     <p><a
-href="http://www.cs.berkeley.edu/~zadeh/">Lofti<br>Zadeh</a></p>
+href="https://www.stat.berkeley.edu/~binyu/">Bin<br>Yu</a></p>
 </li>
 <li>
-    <a href="http://www-video.eecs.berkeley.edu/~avz/"><img src="images/cloudinary_cache/faculty/4b6fd149203160d0c6dd6fffe134159f.png" alt="Avideh Zakhor"></a>
+    <a href="http://www-video.eecs.berkeley.edu/~avz/"><img src="images/cloudinary_cache/faculty/c5a1d5e3b01cd66b3825148710ed764e.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/xysq1uesud7itumnvzbd.png" alt="Avideh Zakhor"></a>
     <p><a
 href="http://www-video.eecs.berkeley.edu/~avz/">Avideh<br>Zakhor</a></p>
 </li>
-                            <li>
-                            </li>
-                            <li>
-                            </li>
-                            <li>
-                            </li>
+<li>
+    <a href="https://www.eecs.berkeley.edu/Faculty/Homepages/feldman.html"><img src="images/cloudinary_cache/faculty/9b78af6d71c24ed2ce17f24e33bd1e76.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/yol8h5ufnpoxjet7nl0z.png" alt="Jerome A. Feldman"></a>
+    <p><a
+href="https://www.eecs.berkeley.edu/Faculty/Homepages/feldman.html">Jerome A.<br>Feldman **</a></p>
+</li>
+<li>
+    <a href="https://www.eecs.berkeley.edu/Faculty/Homepages/morgan.html"><img src="images/cloudinary_cache/faculty/22235309e1cb2b71a6bbe93045c8015e.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/ni8ifpx9s8bwc5o1oghh.png" alt="Nelson Morgan"></a>
+    <p><a
+href="https://www.eecs.berkeley.edu/Faculty/Homepages/morgan.html">Nelson<br>Morgan **</a></p>
+</li>
+<li>
+    <a href="http://www.cs.berkeley.edu/~zadeh/"><img src="images/cloudinary_cache/faculty/c81473ced91b56faed682fd571db704e.png" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200,z_1.0/byal1cyzhoy1qat804iv.png" alt="Lotfi Zadeh"></a>
+    <p><a
+href="http://www.cs.berkeley.edu/~zadeh/">Lotfi<br>Zadeh **</a></p>
+</li>
                     </div>
             </ul>
         </section>
@@ -265,13 +291,16 @@ href="http://www-video.eecs.berkeley.edu/~avz/">Avideh<br>Zakhor</a></p>
               <a href="seminar.html">Seminar</a>
               |
 
+              <a href="textbooks.html">Textbooks</a>
+              |
+
               <a href="software.html">Software</a>
               |
 
               <a href="sponsor.html">Industrial Affiliates</a>
-              |
 
               <a href="getting_involved.html">Getting Involved</a>
+              |
               |
             </div>
         </div>

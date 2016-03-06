@@ -20,6 +20,7 @@
         <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.dropotron.js"></script>
+        <script src="js/jquery.dotdotdot.min.js"></script>
         <script src="js/config.js"></script>
         <script src="js/skel.min.js"></script>
         <script src="js/skel-panels.min.js"></script>
@@ -37,17 +38,31 @@
             <!-- Header -->
             <div id="header" class="container">
                 <!-- Logo -->
-                <h1 id="logo">
+                <!--<h1 id="logo">
                     <a id="home" href="#">Berkeley Artificial Intelligence Research Lab</a>
-                </h1>
+                </h1>-->
                 <!-- Nav -->
                 <nav id="nav">
-                    <ul>
+                    <ul style="padding-top: 10px; padding-bottom: 2em">
                             <li>
-                                <a href="index.html#header" class="icon icon-home"><span>BAIR</span></a>
+                                <a href="index.html#header" class="">
+                                  <span style="
+                                        position: relative;
+                                            width: 211px;
+                                                display: inline-block;
+                                                    height: 10px;
+                                                    ">
+                                    <img src="images/logo.png" style="
+                                        position: absolute;
+                                            left: 0;
+                                                top: -30px;
+                                                "/>
+                                  </span>
+                                </a>
                             </li>
+
                             <li>
-                                <a href="#header" class="icon icon-user"><span>People</span></a>
+                                <a href="#header"><span>People</span></a>
                                     <ul>
                                             <li><a href="faculty.html">Faculty</a></li>
                                             <li><a href="students.html">Students</a></li>
@@ -55,19 +70,21 @@
                                     </ul>
                             </li>
                             <li>
-                                <a href="courses.html" class="icon icon-book"><span>Courses</span></a>
+                                <a href="#header"><span>Academics</span></a>
+                                    <ul>
+                                            <li><a href="courses.html">Courses</a></li>
+                                            <li><a href="seminar.html">Seminar</a></li>
+                                            <li><a href="textbooks.html">Textbooks</a></li>
+                                    </ul>
                             </li>
                             <li>
-                                <a href="seminar.html" class="icon icon-book"><span>Seminar</span></a>
+                                <a href="software.html"><span>Software</span></a>
                             </li>
                             <li>
-                                <a href="software.html" class="icon icon-book"><span>Software</span></a>
+                                <a href="sponsor.html"><span>Industrial Affiliates</span></a>
                             </li>
                             <li>
-                                <a href="sponsor.html" class="icon icon-bar-chart"><span>Industrial Affiliates</span></a>
-                            </li>
-                            <li>
-                                <a href="getting_involved.html" class="icon icon-book"><span>Getting Involved</span></a>
+                                <a href="getting_involved.html"><span>Getting Involved</span></a>
                             </li>
                     </ul>
                 </nav>
@@ -82,22 +99,40 @@
         </header>
         <div class="markdown-container">
           <p>
-          <strong><a href="http://rll.berkeley.edu/cgt/">Computation Graph Toolkit (CGT)</a></strong>: Computation Graph Toolkit (CGT) is a library for evaluation and differentiation of functions of multidimensional arrays. Source code is available on GitHub.
+          <strong><a href="http://www.stat.berkeley.edu/~nickboyd/adcg/">ADCG</a></strong>: Solver for sparse inverse problems in computational imaging
           </p>
           <p>
-          <strong><a href="http://rll.berkeley.edu/trajopt/doc/sphinx_build/html/">trajopt: Trajectory Optimization for Motion Planning</a></strong>: trajopt is a software framework for generating robot trajectories by local optimization.
-          </p>
-          <p>
-          <strong><a href="https://bayesianlogic.github.io/">BLOG probabilistic programming language (PPL)</a></strong>: A general purpose probabilistic programming language designed for representing relations and uncertainties among real world objects.
+          <strong><a href="http://spark.apache.org/graphx/">Apache Spark: GraphX</a></strong>: A framework for graph large-scale distribured graph structured computation 
           </p>
           <p>
           <strong><a href="http://nlp.cs.berkeley.edu/software.shtml">Berkeley NLP tools</a></strong>: High-performing systems for a number of NLP tasks, including syntactic parsing, entity analysis, structured prediction, OCR, language modeling, and word alignment.
           </p>
           <p>
-          <strong><a href="http://rll.berkeley.edu/gps/">Guided Policy Search (GPS)</a></strong>: This code-base implements the guided policy search algorithm and LQG-based trajectory optimization. It includes a complete robot controller and sensor interface for the PR2 robot via ROS, and an interface for simulated agents in Box2D and Mujoco.
+          <strong><a href="https://bayesianlogic.github.io/">BLOG probabilistic programming language (PPL)</a></strong>: A general purpose probabilistic programming language designed for representing relations and uncertainties among real world objects.
+          </p>
+          <p>
+          <strong><a href="https://github.com/moskewcz/boda">Boda</a></strong>: A framework for productively and portably producing high-efficient implementations of DNN/CNN
           </p>
           <p>
           <strong><a href="http://caffe.berkeleyvision.org/">CAFFE</a></strong>: Open source deep learning
+          </p>
+          <p>
+          <strong><a href="https://github.com/gingsmith/cocoa">CoCoA</a></strong>: A Framework for Communication-Efficient Distributed Optimization
+          </p>
+          <p>
+          <strong><a href="http://rll.berkeley.edu/cgt/">Computation Graph Toolkit (CGT)</a></strong>: Computation Graph Toolkit (CGT) is a library for evaluation and differentiation of functions of multidimensional arrays. Source code is available on GitHub.
+          </p>
+          <p>
+          <strong><a href="https://github.com/weichengkuo/DeepBox">DeepBox</a></strong>: DeepBox object proposals (ICCV 15&#039;)
+          </p>
+          <p>
+          <strong><a href="http://rll.berkeley.edu/gps/">Guided Policy Search (GPS)</a></strong>: This code-base implements the guided policy search algorithm and LQG-based trajectory optimization. It includes a complete robot controller and sensor interface for the PR2 robot via ROS, and an interface for simulated agents in Box2D and Mujoco.
+          </p>
+          <p>
+          <strong><a href="https://github.com/pulkitag/ief">Iterative Error Feedback (IEF)</a></strong>: Human Pose Estimation With Iterative Error Feedback
+          </p>
+          <p>
+          <strong><a href="http://keystone-ml.org/">Keystone ML</a></strong>: Framework for construction of large scale, end-to-end, machine learning pipelines with Apache Spark.
           </p>
           <p>
           <strong><a href="http://jeffdonahue.com/lrcn/">LRCN</a></strong>: Deep video / vision sequene learning
@@ -106,16 +141,22 @@
           <strong><a href="http://lsda.berkeleyvision.org/">LSDA</a></strong>: Large-scale deep visual detection
           </p>
           <p>
+          <strong><a href="http://nextml.org/">NEXT</a></strong>: Simplifies the deployment and evaluation of active learning algorithms that use human feedback (in collaboration with University of Wisconsin)
+          </p>
+          <p>
           <strong><a href="http://raptor.berkeleyvision.org/">RAPTOR</a></strong>: Adaptive robotic detector learning
           </p>
           <p>
           <strong><a href="https://github.com/amplab/SparkNet">SparkNet</a></strong>: Distributed Neural Networks for Spark
           </p>
           <p>
-          <strong><a href="https://github.com/gingsmith/cocoa">CoCoA</a></strong>: A Framework for Communication-Efficient Distributed Optimization
+          <strong><a href="http://zhangyuc.github.io/splash/">Splash</a></strong>: Splash: User-friendly Programming Interface for Parallelizing Stochastic Algorithms
           </p>
           <p>
-          <strong><a href="http://zhangyuc.github.io/splash/">Splash</a></strong>: Splash: User-friendly Programming Interface for Parallelizing Stochastic Algorithms
+          <strong><a href="http://rll.berkeley.edu/trajopt/doc/sphinx_build/html/">trajopt: Trajectory Optimization for Motion Planning</a></strong>: trajopt is a software framework for generating robot trajectories by local optimization.
+          </p>
+          <p>
+          <strong><a href="https://wiki.eecs.berkeley.edu/biomimetics/Main/Zumy">Zumy Robot</a></strong>: Open source hardware and software for small tracked mobile robot using ROS
           </p>
         </div>
     </section>
@@ -139,13 +180,16 @@
               <a href="seminar.html">Seminar</a>
               |
 
+              <a href="textbooks.html">Textbooks</a>
+              |
+
               <a href="software.html">Software</a>
               |
 
               <a href="sponsor.html">Industrial Affiliates</a>
-              |
 
               <a href="getting_involved.html">Getting Involved</a>
+              |
               |
             </div>
         </div>

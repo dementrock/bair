@@ -15,6 +15,8 @@ def get_faculty_list
     "Url" => :url,
     "Image Url" => :image_url,
     "Steering" => :steering,
+    "Emeritus" => :emeritus,
+    "Zoom" => :zoom,
   }
 
   bair_current_file = session.file_by_title("BAIR Faculty")
@@ -60,7 +62,7 @@ def ensure_faculty_face_images!(sorted_rows)
       key = Digest::MD5.hexdigest(row[:image_url])
       if processed_images.include?(key)
         id = processed_images[key]["public_id"]
-        row[:remote_cropped_image_url] = Cloudinary::Utils.cloudinary_url(id, width: 200, height: 200, crop: :thumb, gravity: :face, radius: :max, format: "png")
+        row[:remote_cropped_image_url] = Cloudinary::Utils.cloudinary_url(id, width: 200, height: 200, zoom: row[:zoom].to_f, crop: :thumb, gravity: :face, radius: :max, format: "png")
       end
     end
   end

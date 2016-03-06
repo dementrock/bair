@@ -20,6 +20,7 @@
         <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.dropotron.js"></script>
+        <script src="js/jquery.dotdotdot.min.js"></script>
         <script src="js/config.js"></script>
         <script src="js/skel.min.js"></script>
         <script src="js/skel-panels.min.js"></script>
@@ -37,17 +38,31 @@
             <!-- Header -->
             <div id="header" class="container">
                 <!-- Logo -->
-                <h1 id="logo">
+                <!--<h1 id="logo">
                     <a id="home" href="#">Berkeley Artificial Intelligence Research Lab</a>
-                </h1>
+                </h1>-->
                 <!-- Nav -->
                 <nav id="nav">
-                    <ul>
+                    <ul style="padding-top: 10px; padding-bottom: 2em">
                             <li>
-                                <a href="index.html#header" class="icon icon-home"><span>BAIR</span></a>
+                                <a href="index.html#header" class="">
+                                  <span style="
+                                        position: relative;
+                                            width: 211px;
+                                                display: inline-block;
+                                                    height: 10px;
+                                                    ">
+                                    <img src="images/logo.png" style="
+                                        position: absolute;
+                                            left: 0;
+                                                top: -30px;
+                                                "/>
+                                  </span>
+                                </a>
                             </li>
+
                             <li>
-                                <a href="#header" class="icon icon-user"><span>People</span></a>
+                                <a href="#header"><span>People</span></a>
                                     <ul>
                                             <li><a href="faculty.html">Faculty</a></li>
                                             <li><a href="students.html">Students</a></li>
@@ -55,19 +70,21 @@
                                     </ul>
                             </li>
                             <li>
-                                <a href="courses.html" class="icon icon-book"><span>Courses</span></a>
+                                <a href="#header"><span>Academics</span></a>
+                                    <ul>
+                                            <li><a href="courses.html">Courses</a></li>
+                                            <li><a href="seminar.html">Seminar</a></li>
+                                            <li><a href="textbooks.html">Textbooks</a></li>
+                                    </ul>
                             </li>
                             <li>
-                                <a href="seminar.html" class="icon icon-book"><span>Seminar</span></a>
+                                <a href="software.html"><span>Software</span></a>
                             </li>
                             <li>
-                                <a href="software.html" class="icon icon-book"><span>Software</span></a>
+                                <a href="sponsor.html"><span>Industrial Affiliates</span></a>
                             </li>
                             <li>
-                                <a href="sponsor.html" class="icon icon-bar-chart"><span>Industrial Affiliates</span></a>
-                            </li>
-                            <li>
-                                <a href="getting_involved.html" class="icon icon-book"><span>Getting Involved</span></a>
+                                <a href="getting_involved.html"><span>Getting Involved</span></a>
                             </li>
                     </ul>
                 </nav>
@@ -82,86 +99,64 @@
 </div>
 <div id="main-wrapper" style="margin-top: 0; padding-top: 0">
 
-    <!-- Main -->
-    <div id="main" class="container">
-        <div class="row">
-            <h2 id="research" style="text-align: center">Undergraduate Courses</strong></h2>
-            <!-- Content -->
-            <div id="content" class="12u">
-                  <header>
-                      <h2><a href="http://ai.berkeley.edu">CS 188: Artificial Intelligence</a></h2>
-                  </header>
-                  <!--<p>Placeholder for description</p>-->
-                  <header>
-                      <h2><a href="">CS 189: Machine Learning</a></h2>
-                  </header>
-                  <!--<p>Placeholder for description</p>-->
-                  <header>
-                      <h2><a href="">EE 127: Convex Optimization</a></h2>
-                  </header>
-                  <!--<p>Placeholder for description</p>-->
-                  <header>
-                      <h2><a href="">EE 126: Probability and Random Processes</a></h2>
-                  </header>
-                  <!--<p>Placeholder for description</p>-->
-                  <header>
-                      <h2><a href="">CogSci 131: Computational Models of Cognition</a></h2>
-                  </header>
-                  <!--<p>Placeholder for description</p>-->
-                  <header>
-                      <h2><a href="https://bcourses.berkeley.edu/courses/1411821">EE106B/206B: Robotic Manipulation and Interaction</a></h2>
-                  </header>
-                  <!--<p>The course is a sequel to EE 106A/Bioengineering C125 and EE206A which
-covers kinematics, dynamics and control of a single robot. This course
-will cover dynamics and control of grasping and groups of robotic
-manipulators coordinating with each other and interacting with the
-environment including people. Concepts will include an introduction to
-grasp modeling with friction, grasp planning, and Dex-Net a data
-driven approach to robust robot grasping and manipulation based on a
-data set of 3D object models that currently includes over 10,000 3D
-object models and 2.5 million parallel-jaw grasps.. The course will
-also cover constrained manipulation, perception guided manipulation,
-including concepts of holonomy and non-holonomy. Throughout, we will
-emphasize design and human-robot interactions and applications in
-manufacturing, service robotics, and locomotion.
-
-The required text is Richard Murray, Zexiang Li and S. Shankar Sastry:
-&quot;A Mathematical Introduction to Robotic Manipulation&quot;</p>-->
-            </div>
-            <h2 id="research" style="text-align: center">Graduate Courses</strong></h2>
-            <!-- Content -->
-            <div id="content" class="12u">
-                  <header>
-                      <h2><a href="">CS 280: Computer Vision</a></h2>
-                  </header>
-                  <!--<p>Placeholder for description</p>-->
-                  <header>
-                      <h2><a href="">CS 281A / Stat 241A: Statistical Learning Theory</a></h2>
-                  </header>
-                  <!--<p>Placeholder for description</p>-->
-                  <header>
-                      <h2><a href="">CS 281B / Stat 241B: Statistical Learning Theory</a></h2>
-                  </header>
-                  <!--<p>Placeholder for description</p>-->
-                  <header>
-                      <h2><a href="">CS 287: Advanced Robotics</a></h2>
-                  </header>
-                  <!--<p>Placeholder for description</p>-->
-                  <header>
-                      <h2><a href="">CS 288: Natural Language Processing</a></h2>
-                  </header>
-                  <!--<p>Placeholder for description</p>-->
-                  <header>
-                      <h2><a href="">EE 227B: Convex Optimization</a></h2>
-                  </header>
-                  <!--<p>Placeholder for description</p>-->
-                  <header>
-                      <h2><a href="">EE 227C: Optimization for Large Scale Data Analysis</a></h2>
-                  </header>
-                  <!--<p>Placeholder for description</p>-->
-            </div>
-
-        </div>
+    <div class="features-wrapper">
+      <!-- Features -->
+      <section class="features container">
+          <header>
+              <h2 id="research" style="text-align: center">Undergraduate Courses</strong></h2>
+          </header>
+          <div class="markdown-container">
+            <p>
+            <strong><a href="http://ai.berkeley.edu">CS 188</a></strong>: Artificial Intelligence
+            </p>
+            <p>
+            <strong><a href="">CS 189</a></strong>: Machine Learning
+            </p>
+            <p>
+            <strong><a href="">EE 127</a></strong>: Convex Optimization
+            </p>
+            <p>
+            <strong><a href="">EE 126</a></strong>: Probability and Random Processes
+            </p>
+            <p>
+            <strong><a href="">CogSci 131</a></strong>: Computational Models of Cognition
+            </p>
+            <p>
+            <strong><a href="https://bcourses.berkeley.edu/courses/1411821">EE106B/206B</a></strong>: Robotic Manipulation and Interaction
+            </p>
+          </div>
+      </section>
+    </div>
+    <div class="features-wrapper">
+      <!-- Features -->
+      <section class="features container">
+          <header>
+              <h2 id="research" style="text-align: center">Graduate Courses</strong></h2>
+          </header>
+          <div class="markdown-container">
+            <p>
+            <strong><a href="">CS 280</a></strong>: Computer Vision
+            </p>
+            <p>
+            <strong><a href="">CS 281A / Stat 241A</a></strong>: Statistical Learning Theory
+            </p>
+            <p>
+            <strong><a href="">CS 281B / Stat 241B</a></strong>: Statistical Learning Theory
+            </p>
+            <p>
+            <strong><a href="">CS 287</a></strong>: Advanced Robotics
+            </p>
+            <p>
+            <strong><a href="">CS 288</a></strong>: Natural Language Processing
+            </p>
+            <p>
+            <strong><a href="">EE 227B</a></strong>: Convex Optimization
+            </p>
+            <p>
+            <strong><a href="">EE 227C</a></strong>: Optimization for Large Scale Data Analysis
+            </p>
+          </div>
+      </section>
     </div>
 </div>
 
@@ -183,13 +178,16 @@ The required text is Richard Murray, Zexiang Li and S. Shankar Sastry:
               <a href="seminar.html">Seminar</a>
               |
 
+              <a href="textbooks.html">Textbooks</a>
+              |
+
               <a href="software.html">Software</a>
               |
 
               <a href="sponsor.html">Industrial Affiliates</a>
-              |
 
               <a href="getting_involved.html">Getting Involved</a>
+              |
               |
             </div>
         </div>

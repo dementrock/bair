@@ -1,0 +1,35 @@
+<?rb @student_list.each_slice(6) do |slice_rows| ?>
+  <div class="row">
+    <?rb slice_rows.each do |row| ?>
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+            <?rb if not row[:webpage].blank? ?>
+              <a href="${row[:webpage]}" class="image">
+            <?rb else ?>
+              <span class="image">
+            <?rb end ?>
+                <img src="${row[:cropped_image_url]}" data-remote-url="${row[:remote_cropped_image_url]}" alt="${row[:first_name]} ${row[:last_name]}" />
+                <span class="name">${row[:first_name]} ${row[:last_name]}</span>
+            <?rb if not row[:webpage].blank? ?>
+              </a>
+            <?rb else ?>
+              </span>
+            <?rb end ?>
+          </div>
+        </div>
+        <?rb if @category[:show_position] ?>
+          <div class="student-info student-position">${row[:position]}</div>
+        <?rb end ?>
+        <div class="student-info student-advisor">Adv.: #{row[:advisor]}</div>
+        <?rb if not row[:research_interests].blank? ?>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">${row[:research_interests].to_s[0].capitalize}${row[:research_interests].to_s[1..-1]}</div>
+            <div class="student-info student-interest">${row[:research_interests].to_s[0].capitalize}${row[:research_interests].to_s[1..-1]}</div>
+        </div>
+        <?rb end ?>
+      </div>
+    <?rb end ?>
+  </div>
+<?rb end ?>
+

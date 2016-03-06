@@ -93,13 +93,7 @@ def get_sorted_rows(faculty_list)
     .to_a.map{|x| x[1][0].merge(advisor: x[1].map{|y|
       %Q{<a href="#{advisor_url_dict[y[:advisor]]}">#{y[:advisor]}</a>}
     }.join(", "))} # join advisors
-    .reject{|x| # only show the ones with profile image filled in
-      #if x[:image_url].blank?
-      #  STDERR.puts "Image blank!"
-      #  STDERR.puts x
-      #end
-      x[:image_url].blank?
-    }.sort_by{|x| x[:last_name]}
+    .sort_by{|x| x[:last_name]}
     .reject{|x| x[:first_name] == "Dummy"}
 
 end
@@ -109,7 +103,7 @@ def ensure_student_face_images!(sorted_rows)
   cli = Firebase::Client.new(base_uri)
   processed_images = cli.get("processed_images").body || {}
   processed_keys = processed_images.keys
-  todo_images = sorted_rows.map{|x| [x[:image_url], x]}.reject{|x| processed_keys.include?(Digest::MD5.hexdigest(x[0]))}
+  todo_images = sorted_rows.reject{|x| x[:image_url].blank?}.map{|x| [x[:image_url], x]}.reject{|x| processed_keys.include?(Digest::MD5.hexdigest(x[0]))}
 
   Cloudinary.config do |config|
     config.cloud_name = ENV["CLOUDINARY_CLOUD_NAME"]
@@ -132,20 +126,32 @@ def ensure_student_face_images!(sorted_rows)
       STDERR.puts "Continuing"
     end
   end
+
+  no_gravity_urls = [
+    "http://cocosci.berkeley.edu/images/paxton.jpg",
+  ]
+
   sorted_rows.each do |row|
     unless row[:image_url].blank?
       key = Digest::MD5.hexdigest(row[:image_url])
       if processed_images.include?(key)
         id = processed_images[key]["public_id"]
-        row[:remote_cropped_image_url] = Cloudinary::Utils.cloudinary_url(id, width: 200, height: 200, crop: :thumb, gravity: :face, radius: :max, format: "jpg")
+        options = {
+          width: 200, height: 200, crop: :thumb, gravity: :face, radius: :max, format: "jpg",
+        }
+        if no_gravity_urls.include?(row[:image_url])
+          options[:gravity] = nil
+        end
+        row[:remote_cropped_image_url] = Cloudinary::Utils.cloudinary_url(id, options)
       end
     end
   end
-  sorted_rows = sorted_rows.reject{|x| x[:remote_cropped_image_url].blank?}
+  # sorted_rows = sorted_rows.reject{|x| x[:remote_cropped_image_url].blank?}
   sorted_rows
 end
 
 def ensure_local_student_face_images!(sorted_rows)
+
   base_uri = "https://bair-dev.firebaseio.com"
   cli_key = "local_student_face_images_v4"
 
@@ -153,7 +159,7 @@ def ensure_local_student_face_images!(sorted_rows)
 
   processed_images = cli.get(cli_key).body || {}
   processed_keys = processed_images.keys
-  todo_images = sorted_rows.map{|x| [x[:remote_cropped_image_url], x]}.reject{|x| processed_keys.include?(Digest::MD5.hexdigest(x[0]))}
+  todo_images = sorted_rows.reject{|x| x[:remote_cropped_image_url].blank?}.map{|x| [x[:remote_cropped_image_url], x]}.reject{|x| processed_keys.include?(Digest::MD5.hexdigest(x[0]))}
 
   Cloudinary.config do |config|
     config.cloud_name = ENV["CLOUDINARY_CLOUD_NAME"]
@@ -187,7 +193,11 @@ def ensure_local_student_face_images!(sorted_rows)
       end
     end
   end
-  sorted_rows = sorted_rows.reject{|x| x[:cropped_image_url].blank?}
+  sorted_rows.each do |row|
+    if row[:cropped_image_url].blank?
+      row[:cropped_image_url] = "images/default_profile.png"
+    end
+  end
   sorted_rows
 end
 

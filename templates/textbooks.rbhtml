@@ -1,0 +1,29 @@
+<?rb
+  require './ruby_utils/bair_courses.rb'
+  course_list = get_course_list
+  ug_list = course_list.select{|x| x[:type] == "undergrad"}
+  grad_list = course_list.select{|x| x[:type] == "grad"}
+?>
+
+<!-- Features Wrapper -->
+<div class="features-wrapper">
+    <!-- Features -->
+    <section class="features container">
+    </section>
+</div>
+<div id="main-wrapper" style="margin-top: 0; padding-top: 0">
+
+    <div class="features-wrapper">
+      <!-- Features -->
+      <section class="features container">
+          <header>
+              <h2 id="research" style="text-align: center">Textbooks</strong></h2>
+          </header>
+          <div class="markdown-container">
+            <p>
+            Russell, Stuart J., and Peter Norvig. "Artificial intelligence: a modern approach." (1995).
+            </p>
+          </div>
+      </section>
+    </div>
+</div>

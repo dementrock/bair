@@ -20,6 +20,7 @@
         <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.dropotron.js"></script>
+        <script src="js/jquery.dotdotdot.min.js"></script>
         <script src="js/config.js"></script>
         <script src="js/skel.min.js"></script>
         <script src="js/skel-panels.min.js"></script>
@@ -37,17 +38,31 @@
             <!-- Header -->
             <div id="header" class="container">
                 <!-- Logo -->
-                <h1 id="logo">
+                <!--<h1 id="logo">
                     <a id="home" href="#">Berkeley Artificial Intelligence Research Lab</a>
-                </h1>
+                </h1>-->
                 <!-- Nav -->
                 <nav id="nav">
-                    <ul>
+                    <ul style="padding-top: 10px; padding-bottom: 2em">
                             <li>
-                                <a href="index.html#header" class="icon icon-home"><span>BAIR</span></a>
+                                <a href="index.html#header" class="">
+                                  <span style="
+                                        position: relative;
+                                            width: 211px;
+                                                display: inline-block;
+                                                    height: 10px;
+                                                    ">
+                                    <img src="images/logo.png" style="
+                                        position: absolute;
+                                            left: 0;
+                                                top: -30px;
+                                                "/>
+                                  </span>
+                                </a>
                             </li>
+
                             <li>
-                                <a href="#header" class="icon icon-user"><span>People</span></a>
+                                <a href="#header"><span>People</span></a>
                                     <ul>
                                             <li><a href="faculty.html">Faculty</a></li>
                                             <li><a href="students.html">Students</a></li>
@@ -55,31 +70,33 @@
                                     </ul>
                             </li>
                             <li>
-                                <a href="courses.html" class="icon icon-book"><span>Courses</span></a>
+                                <a href="#header"><span>Academics</span></a>
+                                    <ul>
+                                            <li><a href="courses.html">Courses</a></li>
+                                            <li><a href="seminar.html">Seminar</a></li>
+                                            <li><a href="textbooks.html">Textbooks</a></li>
+                                    </ul>
                             </li>
                             <li>
-                                <a href="seminar.html" class="icon icon-book"><span>Seminar</span></a>
+                                <a href="software.html"><span>Software</span></a>
                             </li>
                             <li>
-                                <a href="software.html" class="icon icon-book"><span>Software</span></a>
+                                <a href="sponsor.html"><span>Industrial Affiliates</span></a>
                             </li>
                             <li>
-                                <a href="sponsor.html" class="icon icon-bar-chart"><span>Industrial Affiliates</span></a>
-                            </li>
-                            <li>
-                                <a href="getting_involved.html" class="icon icon-book"><span>Getting Involved</span></a>
+                                <a href="getting_involved.html"><span>Getting Involved</span></a>
                             </li>
                     </ul>
                 </nav>
             </div>
         </div>
         
-<div class="features-wrapper">
+<div class="features-wrapper" id="students_list">
   <section class="features fellows container">
 
     <h2 id="fellowships">Students</h2>
 
-    <div class="features-wrapper">
+    <div class="features-wrapper" style="padding-top: 1em; padding-bottom: 4em;" >
         <div id="index_navs">
             |
             <a href="students.html">All</a>
@@ -94,275 +111,348 @@
             |
         </div>
     </div>
+  <div class="row">
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <a href="https://www.linkedin.com/in/anurag-ajay-3060b080" class="image">
+                <img src="images/cloudinary_cache/student/fc4369fe9701f750dfb5b07b30a2a090.jpg" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200/hbu8dcu12pord2ppzslt.jpg" alt="Anurag  Ajay" />
+                <span class="name">Anurag  Ajay</span>
+              </a>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">State estimation, deep reinforcement learning</div>
+            <div class="student-info student-interest">State estimation, deep reinforcement learning</div>
+        </div>
+      </div>
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <a href="https://www.linkedin.com/in/peter-xi-chen-25178356" class="image">
+                <img src="images/cloudinary_cache/student/8174194f80098ab9e4a7a3b37e92c6ff.jpg" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200/h5hhmot6lkyeeklizywe.jpg" alt="Xi (Peter) Chen" />
+                <span class="name">Xi (Peter) Chen</span>
+              </a>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">Deep reinforcement learning</div>
+            <div class="student-info student-interest">Deep reinforcement learning</div>
+        </div>
+      </div>
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <a href="www.rohanchitnis.com" class="image">
+                <img src="images/cloudinary_cache/student/5ae435bff2491af5f8456310683ebeac.jpg" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200/w9rwebcyhfj0ozktv9wl.jpg" alt="Rohan Chitnis" />
+                <span class="name">Rohan Chitnis</span>
+              </a>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">Robot planning, reinforcement learning</div>
+            <div class="student-info student-interest">Robot planning, reinforcement learning</div>
+        </div>
+      </div>
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <span class="image">
+                <img src="images/cloudinary_cache/student/8761fc900af596dafa6fb28f0eb919fb.jpg" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200/ucdadm1iqknxxxr5bfhg.jpg" alt="Brenton Chu" />
+                <span class="name">Brenton Chu</span>
+              </span>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://goldberg.berkeley.edu/">Ken Goldberg</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">AI, Machine Learning, Robotics</div>
+            <div class="student-info student-interest">AI, Machine Learning, Robotics</div>
+        </div>
+      </div>
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <span class="image">
+                <img src="images/cloudinary_cache/student/84a48122eab26a9cd2af8a514ad200cf.jpg" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200/qoezxulwrte3szchrtlc.jpg" alt="Wynn Feddema" />
+                <span class="name">Wynn Feddema</span>
+              </span>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://goldberg.berkeley.edu/">Ken Goldberg</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">Robotics, Prosthetics</div>
+            <div class="student-info student-interest">Robotics, Prosthetics</div>
+        </div>
+      </div>
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <a href="https://www.linkedin.com/in/xinyang-geng-91bb6797" class="image">
+                <img src="images/cloudinary_cache/student/40e076252226d8375d00238d34723741.jpg" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200/y88l7k5ailq8osmhweu5.jpg" alt="Xinyang Geng" />
+                <span class="name">Xinyang Geng</span>
+              </a>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">Deep learning, reinforcement learning</div>
+            <div class="student-info student-interest">Deep learning, reinforcement learning</div>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <span class="image">
+                <img src="images/cloudinary_cache/student/3495599cd007c20de141b1b357511f40.jpg" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200/lgogagyxwvffcqdwscng.jpg" alt="Menglong  Guo" />
+                <span class="name">Menglong  Guo</span>
+              </span>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://goldberg.berkeley.edu/">Ken Goldberg</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">Surgical Robotics, Mechanical Design</div>
+            <div class="student-info student-interest">Surgical Robotics, Mechanical Design</div>
+        </div>
+      </div>
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <span class="image">
+                <img src="images/cloudinary_cache/student/b916c29bce33eba33e13fcf84b0d501f.jpg" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200/qllzubz71fu1q26cyqkg.jpg" alt="Brian Hou" />
+                <span class="name">Brian Hou</span>
+              </span>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://goldberg.berkeley.edu/">Ken Goldberg</a></div>
+      </div>
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <span class="image">
+                <img src="images/cloudinary_cache/student/b4726a0376f53fee84090250037b837e.jpg" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200/t7oqjrvqr9lh30wmzbrt.jpg" alt="Wesley Hsieh" />
+                <span class="name">Wesley Hsieh</span>
+              </span>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://goldberg.berkeley.edu/">Ken Goldberg</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">AI, Machine Learning, Robotics</div>
+            <div class="student-info student-interest">AI, Machine Learning, Robotics</div>
+        </div>
+      </div>
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <a href="http://www.alexirpan.com" class="image">
+                <img src="images/cloudinary_cache/student/8d958a79ba16ac5a0438c6f734c1b833.jpg" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200/i31g3ffqq0oxymj7hgpq.jpg" alt="Alex Irpan" />
+                <span class="name">Alex Irpan</span>
+              </a>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">Deep reinvorcement learning</div>
+            <div class="student-info student-interest">Deep reinvorcement learning</div>
+        </div>
+      </div>
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <a href="https://www.linkedin.com/in/yiming-jen-60b042a7" class="image">
+                <img src="images/cloudinary_cache/student/aeccdc67dea90df15e588601497c0716.jpg" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200/llitrcduv4hovlkr4bgg.jpg" alt="Yiming Jen" />
+                <span class="name">Yiming Jen</span>
+              </a>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://goldberg.berkeley.edu/">Ken Goldberg</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">Robotics, Computer Vision</div>
+            <div class="student-info student-interest">Robotics, Computer Vision</div>
+        </div>
+      </div>
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <span class="image">
+                <img src="images/cloudinary_cache/student/e135bd9314c1ea4157f7da36164f74a9.jpg" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200/twckbqwoy6umhhi0bkjd.jpg" alt="Jonathan Lee" />
+                <span class="name">Jonathan Lee</span>
+              </span>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://goldberg.berkeley.edu/">Ken Goldberg</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">Machine Learning, Robotics</div>
+            <div class="student-info student-interest">Machine Learning, Robotics</div>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <span class="image">
+                <img src="images/cloudinary_cache/student/a06594b5458fb6c7d8c7f26c542cfc35.jpg" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200/vcbde1ymqeg1jf3vnuny.jpg" alt="Jacky Liang" />
+                <span class="name">Jacky Liang</span>
+              </span>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://goldberg.berkeley.edu/">Ken Goldberg</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">Machine Learning, AI, Cloud Robotics</div>
+            <div class="student-info student-interest">Machine Learning, AI, Cloud Robotics</div>
+        </div>
+      </div>
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <a href="virajmahesh.me" class="image">
+                <img src="images/cloudinary_cache/student/10f6012fcf2c9b6a59e167af4c167e24.jpg" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200/uukbqs59f3x2peqddqjn.jpg" alt="Viraj Mahesh" />
+                <span class="name">Viraj Mahesh</span>
+              </a>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://goldberg.berkeley.edu/">Ken Goldberg</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">Machine Learning, Robotics</div>
+            <div class="student-info student-interest">Machine Learning, Robotics</div>
+        </div>
+      </div>
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <span class="image">
+                <img src="images/default_profile.png" data-remote-url="" alt="Abraham  Martey" />
+                <span class="name">Abraham  Martey</span>
+              </span>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://goldberg.berkeley.edu/">Ken Goldberg</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">Robotics, software Design</div>
+            <div class="student-info student-interest">Robotics, software Design</div>
+        </div>
+      </div>
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <span class="image">
+                <img src="images/default_profile.png" data-remote-url="" alt="Robert McKnight" />
+                <span class="name">Robert McKnight</span>
+              </span>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://goldberg.berkeley.edu/">Ken Goldberg</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">Robotics, Design, Mechatronics</div>
+            <div class="student-info student-interest">Robotics, Design, Mechatronics</div>
+        </div>
+      </div>
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <a href="https://www.linkedin.com/in/nikhilmishra000" class="image">
+                <img src="images/cloudinary_cache/student/8e59f45c68aa0320db3f92a77879280b.jpg" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200/lfkyc1xdob2wzgqnbg3i.jpg" alt="Nikhil Mishra" />
+                <span class="name">Nikhil Mishra</span>
+              </a>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">Deep reinforcement learning, robotic control</div>
+            <div class="student-info student-interest">Deep reinforcement learning, robotic control</div>
+        </div>
+      </div>
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <span class="image">
+                <img src="images/cloudinary_cache/student/8b96e045b56dd0f4cab6fe72df49ed9f.jpg" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200/fxhxo1xfabfg1z5hnix1.jpg" alt="Ashvin Nair" />
+                <span class="name">Ashvin Nair</span>
+              </span>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">Robotic perception and control</div>
+            <div class="student-info student-interest">Robotic perception and control</div>
+        </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <a href="linkedin.com/in/sahilsancheti" class="image">
+                <img src="images/default_profile.png" data-remote-url="" alt="Sahil Sancheti" />
+                <span class="name">Sahil Sancheti</span>
+              </a>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">Deep learning</div>
+            <div class="student-info student-interest">Deep learning</div>
+        </div>
+      </div>
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <a href="https://www.linkedin.com/in/xinyutan" class="image">
+                <img src="images/cloudinary_cache/student/bebc7ea69dac2183b59a9f723dcb72b1.jpg" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200/mtk9f9papv3ykxcx8lf5.jpg" alt="Xin Yu (Dennis) Tan" />
+                <span class="name">Xin Yu (Dennis) Tan</span>
+              </a>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">Robotic perception and control</div>
+            <div class="student-info student-interest">Robotic perception and control</div>
+        </div>
+      </div>
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <a href="http://marvinzhang.com/" class="image">
+                <img src="images/cloudinary_cache/student/a19345db1162d4c5e925dccf0f710984.jpg" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200/erbibyvlxlfpzrq7fkeq.jpg" alt="Marvin Zhang" />
+                <span class="name">Marvin Zhang</span>
+              </a>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">Deep reinforcement learning, robotic control</div>
+            <div class="student-info student-interest">Deep reinforcement learning, robotic control</div>
+        </div>
+      </div>
+      <div class="2u student-entry">
+        <div class="gallery">
+          <div>
+              <a href="http://tianhaozhang.com" class="image">
+                <img src="images/cloudinary_cache/student/ffc6d6f750c5f40bd2b5931f2723f8cc.jpg" data-remote-url="http://res.cloudinary.com/bair-berkeley/image/upload/c_thumb,g_face,h_200,r_max,w_200/m9egq1r3lwghjhjgp06g.jpg" alt="Tianhao Zhang" />
+                <span class="name">Tianhao Zhang</span>
+              </a>
+          </div>
+        </div>
+        <div class="student-info student-advisor">Adv.: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a></div>
+        <div class="student-interest-wrapper">
+            <div class="student-info student-interest-short">Deep learning, reinforcement learning</div>
+            <div class="student-info student-interest">Deep learning, reinforcement learning</div>
+        </div>
+      </div>
+  </div>
 
-      <div class="row">
-          <div class="3u">
-            <div class="gallery">
-              <div>
-                  <a href="https://www.linkedin.com/in/anurag-ajay-3060b080" class="image">
-                    <img src="images/cloudinary_cache/student/fc4369fe9701f750dfb5b07b30a2a090.jpg" alt="Anurag  Ajay" />
-                    <span>Anurag  Ajay</span>
-                  </a>
-              </div>
-            </div>
-            <p>
-            Undergraduate <br>
-            Advisor: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a> <br>
-            Research Interests: state estimation, deep reinforcement learning
-            </p>
-          </div>
-          <div class="3u">
-            <div class="gallery">
-              <div>
-                  <a href="https://www.linkedin.com/in/peter-xi-chen-25178356" class="image">
-                    <img src="images/cloudinary_cache/student/8174194f80098ab9e4a7a3b37e92c6ff.jpg" alt="Xi (Peter) Chen" />
-                    <span>Xi (Peter) Chen</span>
-                  </a>
-              </div>
-            </div>
-            <p>
-            Undergraduate <br>
-            Advisor: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a> <br>
-            Research Interests: deep reinforcement learning
-            </p>
-          </div>
-          <div class="3u">
-            <div class="gallery">
-              <div>
-                  <a href="www.rohanchitnis.com" class="image">
-                    <img src="images/cloudinary_cache/student/5ae435bff2491af5f8456310683ebeac.jpg" alt="Rohan Chitnis" />
-                    <span>Rohan Chitnis</span>
-                  </a>
-              </div>
-            </div>
-            <p>
-            Undergraduate <br>
-            Advisor: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a> <br>
-            Research Interests: robot planning, reinforcement learning
-            </p>
-          </div>
-          <div class="3u">
-            <div class="gallery">
-              <div>
-                  <span class="image">
-                    <img src="images/cloudinary_cache/student/8761fc900af596dafa6fb28f0eb919fb.jpg" alt="Brenton Chu" />
-                    <span>Brenton Chu</span>
-                  </span>
-              </div>
-            </div>
-            <p>
-            Undergraduate <br>
-            Advisor: <a href="http://goldberg.berkeley.edu/">Ken Goldberg</a> <br>
-            Research Interests: AI, Machine Learning, Robotics
-            </p>
-          </div>
-      </div>
-      <div class="row">
-          <div class="3u">
-            <div class="gallery">
-              <div>
-                  <span class="image">
-                    <img src="images/cloudinary_cache/student/84a48122eab26a9cd2af8a514ad200cf.jpg" alt="Wynn Feddema" />
-                    <span>Wynn Feddema</span>
-                  </span>
-              </div>
-            </div>
-            <p>
-            Undergraduate <br>
-            Advisor: <a href="http://goldberg.berkeley.edu/">Ken Goldberg</a> <br>
-            Research Interests: Robotics, Prosthetics
-            </p>
-          </div>
-          <div class="3u">
-            <div class="gallery">
-              <div>
-                  <a href="https://www.linkedin.com/in/xinyang-geng-91bb6797" class="image">
-                    <img src="images/cloudinary_cache/student/40e076252226d8375d00238d34723741.jpg" alt="Xinyang Geng" />
-                    <span>Xinyang Geng</span>
-                  </a>
-              </div>
-            </div>
-            <p>
-            Undergraduate <br>
-            Advisor: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a> <br>
-            Research Interests: deep learning, reinforcement learning
-            </p>
-          </div>
-          <div class="3u">
-            <div class="gallery">
-              <div>
-                  <span class="image">
-                    <img src="images/cloudinary_cache/student/b916c29bce33eba33e13fcf84b0d501f.jpg" alt="Brian Hou" />
-                    <span>Brian Hou</span>
-                  </span>
-              </div>
-            </div>
-            <p>
-            Undergraduate <br>
-            Advisor: <a href="http://goldberg.berkeley.edu/">Ken Goldberg</a> <br>
-            Research Interests: 
-            </p>
-          </div>
-          <div class="3u">
-            <div class="gallery">
-              <div>
-                  <span class="image">
-                    <img src="images/cloudinary_cache/student/b4726a0376f53fee84090250037b837e.jpg" alt="Wesley Hsieh" />
-                    <span>Wesley Hsieh</span>
-                  </span>
-              </div>
-            </div>
-            <p>
-            Undergraduate <br>
-            Advisor: <a href="http://goldberg.berkeley.edu/">Ken Goldberg</a> <br>
-            Research Interests: AI, Machine Learning, Robotics
-            </p>
-          </div>
-      </div>
-      <div class="row">
-          <div class="3u">
-            <div class="gallery">
-              <div>
-                  <a href="www.alexirpan.com" class="image">
-                    <img src="images/cloudinary_cache/student/8d958a79ba16ac5a0438c6f734c1b833.jpg" alt="Alex Irpan" />
-                    <span>Alex Irpan</span>
-                  </a>
-              </div>
-            </div>
-            <p>
-            Undergraduate <br>
-            Advisor: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a> <br>
-            Research Interests: deep reinvorcement learning
-            </p>
-          </div>
-          <div class="3u">
-            <div class="gallery">
-              <div>
-                  <a href="https://www.linkedin.com/in/yiming-jen-60b042a7" class="image">
-                    <img src="images/cloudinary_cache/student/aeccdc67dea90df15e588601497c0716.jpg" alt="Yiming Jen" />
-                    <span>Yiming Jen</span>
-                  </a>
-              </div>
-            </div>
-            <p>
-            Undergraduate <br>
-            Advisor: <a href="http://goldberg.berkeley.edu/">Ken Goldberg</a> <br>
-            Research Interests: Robotics, Computer Vision
-            </p>
-          </div>
-          <div class="3u">
-            <div class="gallery">
-              <div>
-                  <span class="image">
-                    <img src="images/cloudinary_cache/student/e135bd9314c1ea4157f7da36164f74a9.jpg" alt="Jonathan Lee" />
-                    <span>Jonathan Lee</span>
-                  </span>
-              </div>
-            </div>
-            <p>
-            Undergraduate <br>
-            Advisor: <a href="http://goldberg.berkeley.edu/">Ken Goldberg</a> <br>
-            Research Interests: Machine Learning, Robotics
-            </p>
-          </div>
-          <div class="3u">
-            <div class="gallery">
-              <div>
-                  <span class="image">
-                    <img src="images/cloudinary_cache/student/a06594b5458fb6c7d8c7f26c542cfc35.jpg" alt="Jacky Liang" />
-                    <span>Jacky Liang</span>
-                  </span>
-              </div>
-            </div>
-            <p>
-            Undergraduate <br>
-            Advisor: <a href="http://goldberg.berkeley.edu/">Ken Goldberg</a> <br>
-            Research Interests: Machine Learning, AI, Cloud Robotics
-            </p>
-          </div>
-      </div>
-      <div class="row">
-          <div class="3u">
-            <div class="gallery">
-              <div>
-                  <a href="https://www.linkedin.com/in/nikhilmishra000" class="image">
-                    <img src="images/cloudinary_cache/student/8e59f45c68aa0320db3f92a77879280b.jpg" alt="Nikhil Mishra" />
-                    <span>Nikhil Mishra</span>
-                  </a>
-              </div>
-            </div>
-            <p>
-            Undergraduate <br>
-            Advisor: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a> <br>
-            Research Interests: deep reinforcement learning, robotic control
-            </p>
-          </div>
-          <div class="3u">
-            <div class="gallery">
-              <div>
-                  <span class="image">
-                    <img src="images/cloudinary_cache/student/8b96e045b56dd0f4cab6fe72df49ed9f.jpg" alt="Ashvin Nair" />
-                    <span>Ashvin Nair</span>
-                  </span>
-              </div>
-            </div>
-            <p>
-            Undergraduate <br>
-            Advisor: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a> <br>
-            Research Interests: robotic perception and control
-            </p>
-          </div>
-          <div class="3u">
-            <div class="gallery">
-              <div>
-                  <a href="https://www.linkedin.com/in/xinyutan" class="image">
-                    <img src="images/cloudinary_cache/student/bebc7ea69dac2183b59a9f723dcb72b1.jpg" alt="Xin Yu (Dennis) Tan" />
-                    <span>Xin Yu (Dennis) Tan</span>
-                  </a>
-              </div>
-            </div>
-            <p>
-            Undergraduate <br>
-            Advisor: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a> <br>
-            Research Interests: robotic perception and control
-            </p>
-          </div>
-          <div class="3u">
-            <div class="gallery">
-              <div>
-                  <a href="http://tianhaozhang.com" class="image">
-                    <img src="images/cloudinary_cache/student/ffc6d6f750c5f40bd2b5931f2723f8cc.jpg" alt="Tianhao Zhang" />
-                    <span>Tianhao Zhang</span>
-                  </a>
-              </div>
-            </div>
-            <p>
-            Undergraduate <br>
-            Advisor: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a> <br>
-            Research Interests: deep learning, reinforcement learning
-            </p>
-          </div>
-      </div>
-      <div class="row">
-          <div class="3u">
-            <div class="gallery">
-              <div>
-                  <a href="http://marvinzhang.com/" class="image">
-                    <img src="images/cloudinary_cache/student/a19345db1162d4c5e925dccf0f710984.jpg" alt="Marvin Zhang" />
-                    <span>Marvin Zhang</span>
-                  </a>
-              </div>
-            </div>
-            <p>
-            Undergraduate <br>
-            Advisor: <a href="http://www.cs.berkeley.edu/~pabbeel/">Pieter Abbeel</a> <br>
-            Research Interests: deep reinforcement learning, robotic control
-            </p>
-          </div>
-      </div>
   </section>
 </div>
-
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".student-interest-short").dotdotdot();
+});
+</script>
 
         <div class="features-wrapper">
             <div id="index_navs">
@@ -382,13 +472,16 @@
               <a href="seminar.html">Seminar</a>
               |
 
+              <a href="textbooks.html">Textbooks</a>
+              |
+
               <a href="software.html">Software</a>
               |
 
               <a href="sponsor.html">Industrial Affiliates</a>
-              |
 
               <a href="getting_involved.html">Getting Involved</a>
+              |
               |
             </div>
         </div>

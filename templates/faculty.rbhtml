@@ -4,7 +4,8 @@
   faculty_list = ensure_faculty_face_images!(faculty_list)
   faculty_list = ensure_local_faculty_face_images!(faculty_list)
   steering = faculty_list.select{|x| x[:steering] == "TRUE" }
-  rest = faculty_list.select{|x| x[:steering] != "TRUE" }
+  normal = faculty_list.select{|x| x[:steering] != "TRUE" and x[:emeritus] != "TRUE" }
+  emeritus = faculty_list.select{|x| x[:emeritus] == "TRUE" }
 ?>
 
 <div class="banner-wrapper">
@@ -19,7 +20,7 @@
                 margin: 0 0 1.5em 0;
                 line-height: 1.75em;
                 color: inherit;
-                ">*: Member of Steering Committee</h6>
+                ">*: Member of Steering Committee <br> **: Emeritus</h6>
             <br>
             <ul class="members pi">
                 <?rb steering.each_slice(5) do |slice_list| ?>
@@ -34,7 +35,7 @@
                         <?rb end ?>
                     </div>
                 <?rb end ?>
-                <?rb rest.each_slice(5) do |slice_list| ?>
+                <?rb (normal + emeritus).each_slice(5) do |slice_list| ?>
                     <div class="row">
                         <?rb slice_list.each do |faculty| ?>
                             <?rb @faculty = faculty ?>
