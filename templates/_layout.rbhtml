@@ -87,7 +87,7 @@
               <?rb flat_items = nav_items.map{|x| x[:nested] ? x[:nested] : [x]}.flatten ?>
               |<?rb flat_items.each_with_index do |item, idx| ?>
               <a href="${item[:url]}">${item[:name]}</a>
-              <?rb if idx != flat_items.size - 2 ?>
+              <?rb if idx != flat_items.size - 1 ?>
               |
               <?rb end ?>
               <?rb end ?>
