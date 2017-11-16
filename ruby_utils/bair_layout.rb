@@ -9,6 +9,11 @@ def get_nav_items
     #  name: "Research Vision",
     #},
     {
+      url: "http://bair.berkeley.edu/blog/?refresh=1",
+      name: "Blog",
+    },
+
+    {
       name: "People",
       url: "#header",
       nested: [

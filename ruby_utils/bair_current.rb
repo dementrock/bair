@@ -1,5 +1,4 @@
 require_relative "./settings"
-require "google/api_client"
 require "google_drive"
 require "pry"
 require "active_support/all"
@@ -7,10 +6,24 @@ require "firebase"
 require "cloudinary"
 require 'open-uri'
 
-def get_sorted_rows(faculty_list)
-  session = GoogleDrive.saved_session(nil, nil, ENV["BAIR_GOOGLE_DRIVE_CLIENT_ID"], ENV["BAIR_GOOGLE_DRIVE_CLIENT_SECRET"])
 
+def smart_add_url_protocol(url)
+  unless url[/\Ahttp:\/\//] || url[/\Ahttps:\/\//]
+    "http://#{url}"
+  else
+    url
+  end
+end
+
+def get_sorted_rows(faculty_list)
+  session = GoogleDrive.saved_session("/root/ruby_google_drive.token", nil, ENV["BAIR_GOOGLE_DRIVE_CLIENT_ID"], ENV["BAIR_GOOGLE_DRIVE_CLIENT_SECRET"])
+
+  worksheets = []
+  
   bair_current_file = session.file_by_title("BAIR current students/post-docs")
+  worksheets += bair_current_file.worksheets.to_a
+  bair_current_file = session.file_by_title("BAIR current students/post-docs - overflow #1")
+  worksheets += bair_current_file.worksheets.to_a
 
   advisor_name_dict = Hash[faculty_list.map{|x| [x[:last_name], "#{x[:first_name]} #{x[:last_name]}"]}]
   advisor_url_dict = Hash[faculty_list.map{|x| ["#{x[:first_name]} #{x[:last_name]}", x[:url]]}]
@@ -38,12 +51,17 @@ def get_sorted_rows(faculty_list)
     "email" => :email,
   }
 
-  bair_current_file.worksheets.each do |worksheet|
+  worksheets.each do |worksheet|
     STDERR.puts "Processing #{worksheet.title}"
     rows = worksheet.rows
     dict_keys = rows[0]
     replaced_keys = dict_keys.map{|x| dict_keys_sub[x]}
     dict_rows = rows[1..-1].map{|row| Hash[replaced_keys.zip(row)].merge(advisor: advisor_name_dict[worksheet.title]) }
+    dict_rows.each do |d|
+      if d[:webpage]
+        d[:webpage] = smart_add_url_protocol(d[:webpage])
+      end
+    end
     all_rows += dict_rows  
   end
 
@@ -67,7 +85,11 @@ def get_sorted_rows(faculty_list)
     "undergraduate" => :undergraduate,
     "masterstudent" => :master,
     "mastersstudent" => :master,
-    "master" => :master
+    "master" => :master,
+    "masters" => :master,
+    "phdcandidate" => :phd,
+    "undergraduatestudent" => :undergraduate,
+    "msstudent" => :master,
   }
 
   position_text = {
@@ -88,13 +110,15 @@ def get_sorted_rows(faculty_list)
     x.merge(raw_position: cleanup, position: position_text[cleanup] || x[:position])
   end
 
-  all_rows
+  all_rows = all_rows
     .group_by{|x| [x[:first_name], x[:last_name]]}
     .to_a.map{|x| x[1][0].merge(advisor: x[1].map{|y|
       %Q{<a href="#{advisor_url_dict[y[:advisor]]}">#{y[:advisor]}</a>}
     }.join(", "))} # join advisors
     .sort_by{|x| x[:last_name]}
     .reject{|x| x[:first_name] == "Dummy"}
+
+  all_rows
 
 end
 

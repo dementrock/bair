@@ -1303,6 +1303,16 @@
         width: 100%;
       }
 
+    .sponsor-wrapper .inner {
+        background: white;
+    }
+    .sponsor-wrapper h2,
+    .sponsor-wrapper p
+    {
+        color: #555;
+    }
+
+
 /*********************************************************************************/
 /* Content                                                                       */
 /*********************************************************************************/
@@ -1381,9 +1391,9 @@
   margin-bottom: 1em;
 }
 
-#slides {
-  display:none;
-}
+//#slides {
+//  display:none;
+//}
 
 #slides .slidesjs-container {
   margin-bottom:10px;

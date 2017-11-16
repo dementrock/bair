@@ -1,5 +1,4 @@
 require_relative "./settings"
-require "google/api_client"
 require "google_drive"
 require "pry"
 require "active_support/all"
@@ -7,7 +6,7 @@ require "firebase"
 require "cloudinary"
 
 def get_faculty_list
-  session = GoogleDrive.saved_session(nil, nil, ENV["BAIR_GOOGLE_DRIVE_CLIENT_ID"], ENV["BAIR_GOOGLE_DRIVE_CLIENT_SECRET"])
+  session = GoogleDrive.saved_session("/root/ruby_google_drive.token", nil, ENV["BAIR_GOOGLE_DRIVE_CLIENT_ID"], ENV["BAIR_GOOGLE_DRIVE_CLIENT_SECRET"])
 
   dict_keys_sub = {
     "First Name" => :first_name,

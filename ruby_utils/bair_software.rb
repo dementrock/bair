@@ -1,10 +1,9 @@
-require "google/api_client"
 require "google_drive"
 require "pry"
 require "active_support/all"
 
 def get_sorted_rows
-  session = GoogleDrive.saved_session(nil, nil, ENV["BAIR_GOOGLE_DRIVE_CLIENT_ID"], ENV["BAIR_GOOGLE_DRIVE_CLIENT_SECRET"])
+  session = GoogleDrive.saved_session("/root/ruby_google_drive.token", nil, ENV["BAIR_GOOGLE_DRIVE_CLIENT_ID"], ENV["BAIR_GOOGLE_DRIVE_CLIENT_SECRET"])
 
   bair_software_file = session.file_by_title("BAIR software")
 

@@ -20,22 +20,10 @@
                 margin: 0 0 1.5em 0;
                 line-height: 1.75em;
                 color: inherit;
-                ">*: Member of Steering Committee <br> **: Emeritus</h6>
+                ">*: Member of Steering Committee</h6>
             <br>
             <ul class="members pi">
-                <?rb steering.each_slice(5) do |slice_list| ?>
-                    <div class="row">
-                        <?rb slice_list.each do |faculty| ?>
-                            <?rb @faculty = faculty ?>
-                            <?rb import('_faculty.rbhtml') ?>
-                        <?rb end ?>
-                        <?rb (5 - slice_list.size).times do ?>
-                            <li>
-                            </li>
-                        <?rb end ?>
-                    </div>
-                <?rb end ?>
-                <?rb (normal + emeritus).each_slice(5) do |slice_list| ?>
+                <?rb (steering + normal + emeritus).each_slice(5) do |slice_list| ?>
                     <div class="row">
                         <?rb slice_list.each do |faculty| ?>
                             <?rb @faculty = faculty ?>
@@ -48,6 +36,16 @@
                     </div>
                 <?rb end ?>
             </ul>
+            <h6 style="
+                font-size: 0.8em;
+                font-weight: 400;
+                letter-spacing: 4px;
+                margin: 0 0 1.5em 0;
+                line-height: 1.75em;
+                color: inherit;
+                ">&dagger;: Emeritus</h6>
+            <br>
+
         </section>
     </div>
 </div>

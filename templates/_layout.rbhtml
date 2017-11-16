@@ -28,12 +28,12 @@
         <script src="js/config.js"></script>
         <script src="js/skel.min.js"></script>
         <script src="js/skel-panels.min.js"></script>
+        <script src="js/jquery.slides.min.js"></script>
         <link rel="stylesheet" href="css/font-awesome.min.css">
-        <script src="js/jquery.slides.min.js"></script> <!-- but with the right path! -->
         <noscript>
-            <link rel="stylesheet" href="css/skel-noscript.css" />
             <link rel="stylesheet" href="css/style.css" />
             <link rel="stylesheet" href="css/style-desktop.css" />
+            <link rel="stylesheet" href="css/skel-noscript.css" />
         </noscript>
     </head>
     <body class="homepage">
@@ -47,19 +47,21 @@
                 </h1>-->
                 <!-- Nav -->
                 <nav id="nav">
-                    <ul style="padding-top: 10px; padding-bottom: 2em">
+                    <ul style="padding-top: 38px; padding-bottom: 50px">
                             <li>
                                 <a href="index.html#header" class="">
                                   <span style="
                                         position: relative;
-                                            width: 211px;
+                                            width: 200px;
                                                 display: inline-block;
                                                     height: 10px;
                                                     ">
-                                    <img src="images/logo.png" style="
+                                    <img src="images/BAIR_Logo_BlueType_Tag.png" style="
                                         position: absolute;
                                             left: 0;
-                                                top: -30px;
+                                            width: 200px;
+                                                top: -56px;
+                                                height: 106px;
                                                 "/>
                                   </span>
                                 </a>

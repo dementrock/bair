@@ -8,10 +8,18 @@
     <!-- Features -->
     <section class="features container">
         <header>
-            <h2 id="research">Getting Involved</strong></h2>
+            <h2 id="research"><strong>Getting Involved</strong></h2>
         </header>
         <div class="markdown-container">
             #{qna}
         </div>
+        <header>
+            <h3 id="research">Any Other Inquiries?</strong></h3>
+        </header>
+        <p>
+            Contact <a href="mailto:angiea@berkeley.edu">Angie ABBATECOLA</a>.
+        </p>
+
+
     </section>
 </div>

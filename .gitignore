@@ -1,2 +1,6 @@
 *.cache
 .DS_Store
+ruby_google_drive.token
+.ruby_google_drive.token
+.gem
+.bash_history

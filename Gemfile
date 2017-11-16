@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'google_drive', '1.0.5'
+gem 'google_drive'#, '1.0.5'
+gem 'tenjin'
+gem 'google-api-client'
 gem 'firebase'
 gem 'cloudinary'
 gem 'redcarpet'
+gem 'pry'
+gem 'activesupport'

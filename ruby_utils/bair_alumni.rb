@@ -1,16 +1,18 @@
-require "google/api_client"
 require "google_drive"
 require "pry"
 require "active_support/all"
 
 def get_sorted_rows(faculty_list)
 
-  session = GoogleDrive.saved_session(nil, nil, ENV["BAIR_GOOGLE_DRIVE_CLIENT_ID"], ENV["BAIR_GOOGLE_DRIVE_CLIENT_SECRET"])
+  session = GoogleDrive.saved_session("/root/ruby_google_drive.token", nil, ENV["BAIR_GOOGLE_DRIVE_CLIENT_ID"], ENV["BAIR_GOOGLE_DRIVE_CLIENT_SECRET"])
 
   bair_alumni_file = session.file_by_title("BAIR Alumni")
 
   advisor_name_dict = Hash[faculty_list.map{|x| [x[:last_name], "#{x[:first_name]} #{x[:last_name]}"]}]
   advisor_url_dict = Hash[faculty_list.map{|x| ["#{x[:first_name]} #{x[:last_name]}", x[:url]]}]
+
+  advisor_name_dict["Wilensky"] = "Robert Wilensky"
+  advisor_url_dict["Wilensky"] = "https://www2.eecs.berkeley.edu/Faculty/Homepages/wilensky.html/"
 
   all_rows = []
 
@@ -64,13 +66,11 @@ def get_sorted_rows(faculty_list)
     x.merge(raw_bair_position: cleanup)
   end
 
-
   all_rows
     .group_by{|x| [x[:first_name].strip, x[:last_name].strip]}
     .to_a.map{|x| x[1][0].merge(advisor: x[1].map{|y|
       %Q{<a href="#{advisor_url_dict[y[:advisor]]}">#{y[:advisor]}</a>}
     }.join(", "))} # join advisors
-    .reject{|x| x[:year].blank?} # only show the ones with year filled in
     .map{|x| x.merge(position: cleanup_position[x[:position]])}
 
 end

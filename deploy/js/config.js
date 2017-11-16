@@ -74,4 +74,11 @@ jQuery(function() {
   // Forms (IE <= 9 only)
     if (jQuery.browser.msie && jQuery.browser.version <= 9)
       jQuery('form').n33_formerize();
+
+    $('#slides').slidesjs({
+      width: 940,
+      height: 350,
+      navigation: false
+    });
+
 });

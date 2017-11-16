@@ -1,0 +1,2 @@
+#!/bin/bash
+scp -r deploy/* dementrock@login.eecs.berkeley.edu:~/bair_deploy/

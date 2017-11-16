@@ -1,12 +1,12 @@
 <li>
     <a href="${@faculty[:url]}"><img src="${@faculty[:cropped_image_url]}" data-remote-url="${@faculty[:remote_cropped_image_url]}" alt="${@faculty[:first_name]} ${@faculty[:last_name]}"></a>
     <?rb if @faculty[:steering] == "TRUE" ?>
-    <?rb   suffix = " *" ?>
+    <?rb   suffix = "*" ?>
     <?rb elsif @faculty[:emeritus] == "TRUE" ?>
-    <?rb   suffix = " **" ?>
+    <?rb   suffix = "&dagger;" ?>
     <?rb else ?>
     <?rb   suffix = "" ?>
     <?rb end ?>
     <p><a
-href="${@faculty[:url]}">${@faculty[:first_name]}<br>${@faculty[:last_name]}${suffix}</a></p>
+href="${@faculty[:url]}">${@faculty[:first_name]}<br>${@faculty[:last_name]}#{suffix}</a></p>
 </li>
